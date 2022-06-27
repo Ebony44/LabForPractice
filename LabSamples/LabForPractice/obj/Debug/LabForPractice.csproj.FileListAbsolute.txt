@@ -1,0 +1,7 @@
+D:\Lab\Repo\LabSamples\LabForPractice\bin\Debug\LabForPractice.exe.config
+D:\Lab\Repo\LabSamples\LabForPractice\bin\Debug\LabForPractice.exe
+D:\Lab\Repo\LabSamples\LabForPractice\bin\Debug\LabForPractice.pdb
+D:\Lab\Repo\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.AssemblyReference.cache
+D:\Lab\Repo\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.CoreCompileInputs.cache
+D:\Lab\Repo\LabSamples\LabForPractice\obj\Debug\LabForPractice.exe
+D:\Lab\Repo\LabSamples\LabForPractice\obj\Debug\LabForPractice.pdb

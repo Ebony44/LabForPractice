@@ -68,6 +68,13 @@ namespace LabForPractice.LabForNumericOrder
 
         public float CalculateAngle(int hour, int min)
         {
+            if(hour < 0 
+                || min < 0
+                || hour> 12 
+                || min > 60)
+            {
+                throw new Exception("Input value is invalid");
+            }
             float angle = 0f;
             var minuteHandBase = 6f;
             var hourHandMod = 0.5f;

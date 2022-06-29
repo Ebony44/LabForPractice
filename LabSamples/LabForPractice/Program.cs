@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 
+
 using LabForPractice.LabForNumericOrder;
 
 namespace RegularExpression1
@@ -226,9 +227,14 @@ namespace RegularExpression1
             // var tempResult = LabEx.CalculateAngle(12, 30);
             // var tempResult = LabEx.CalculateAngle(11, 30);
             // var tempResult = LabEx.CalculateAngle(3, 30);
-            var tempResult = LabEx.CalculateAngle(4, 0);
+            // var tempResult = LabEx.CalculateAngle(4, 0);
+            var tempResult = LabEx.CalculateAngle(0, 66);
             #endregion
 
         }
+
+
+        
+
     }
 }

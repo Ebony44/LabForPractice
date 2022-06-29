@@ -16,8 +16,6 @@ namespace LabForPractice.LabForNumericOrder
          * 
          * Given a string s, return the longest palindromic substring in s.
 
- 
-
             Example 1:
             
             Input: s = "babad"
@@ -80,6 +78,19 @@ namespace LabForPractice.LabForNumericOrder
             //}
 
 
+            // 2. grab one by one
+            const int ASSERTION_MAXCOUNT = 500;
+            int assertionCount = 0;
+            while(true)
+            {
+                
+                if(assertionCount >= ASSERTION_MAXCOUNT)
+                {
+                    break;
+                }
+                assertionCount++;
+            }
+            // 2.1. check length is even or odd()
             #region sample from Cpp
             StringBuilder sb = new StringBuilder();
             string line = string.Empty;

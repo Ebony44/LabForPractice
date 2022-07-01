@@ -133,6 +133,21 @@ namespace LabForPractice.LabForNumericOrder
                     letterOccurence.Add(s[i], 1);
                 }
             }
+            // check length is odd or even
+
+            bool bIsOdd = false;
+            if(s.Length % 2 == 0)
+            {
+                bIsOdd = false;
+            }
+            else
+            {
+                bIsOdd = true;
+            }
+
+            // check letters are matched
+
+            
 
             return string.Empty;
         }

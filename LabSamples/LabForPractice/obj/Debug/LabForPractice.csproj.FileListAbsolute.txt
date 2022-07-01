@@ -5,3 +5,6 @@ D:\Lab\Repo\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.AssemblyRe
 D:\Lab\Repo\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.CoreCompileInputs.cache
 D:\Lab\Repo\LabSamples\LabForPractice\obj\Debug\LabForPractice.exe
 D:\Lab\Repo\LabSamples\LabForPractice\obj\Debug\LabForPractice.pdb
+D:\Lab\Repo\LabSamples\LabForPractice\bin\Debug\System.Threading.Tasks.Dataflow.dll
+D:\Lab\Repo\LabSamples\LabForPractice\bin\Debug\System.Threading.Tasks.Dataflow.xml
+D:\Lab\Repo\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.CopyComplete

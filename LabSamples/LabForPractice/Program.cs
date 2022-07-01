@@ -5,6 +5,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
 
+using System.Threading.Tasks;
+using System.Threading.Tasks.Dataflow;
 
 using LabForPractice.LabForNumericOrder;
 
@@ -93,11 +95,11 @@ namespace RegularExpression1
 
             #endregion
             #region reversed
-            var tempIntList = new List<int>(capacity: 15);
-            for (int i = tempIntList.Count - 1; i >= 0; i--)
-            {
-                Console.WriteLine("");
-            }
+            //var tempIntList = new List<int>(capacity: 15);
+            //for (int i = tempIntList.Count - 1; i >= 0; i--)
+            //{
+            //    Console.WriteLine("");
+            //}
             #endregion
             #region
             var tempDic = new Dictionary<int, int>(capacity: 10);
@@ -228,13 +230,119 @@ namespace RegularExpression1
             // var tempResult = LabEx.CalculateAngle(11, 30);
             // var tempResult = LabEx.CalculateAngle(3, 30);
             // var tempResult = LabEx.CalculateAngle(4, 0);
-            var tempResult = LabEx.CalculateAngle(0, 66);
+            // var tempResult = LabEx.CalculateAngle(0, 66);
+            #endregion
+
+            #region
+            //Circle circle = new Circle();
+            // var tempCircle = circle.Calculate(r => 2 * Math.PI * r);
+            //var tempCircle = circle.Calculate(r => r);
+            #endregion
+
+            #region
+            
+            List<Printer> printers = new List<Printer>();
+            // int i = 0;
+            
+            for (int i = 0; i < 10; i++)
+            {
+                //var tempValue = i;
+                //printers.Add(delegate { Console.WriteLine(tempValue); });
+
+                printers.Add(delegate { Console.WriteLine(i); });
+            }
+
+            foreach (var printer in printers)
+            {
+                printer();
+            }
+            #endregion
+
+            #region boxing unboxing
+            object tempObj;
+            int tempInt = 1;
+            tempObj = (object)tempInt;
+            var tempVariable = (int)tempObj;
             #endregion
 
         }
 
 
+        class DataflowProducerConsumer
+        {
+            static void Produce(ITargetBlock<byte[]> target)
+            {
+                var rand = new Random();
+
+                for (int i = 0; i < 100; ++i)
+                {
+                    var buffer = new byte[1024];
+                    rand.NextBytes(buffer);
+                    target.Post(buffer);
+                }
+
+                target.Complete();
+            }
+
+            static async Task<int> ConsumeAsync(ISourceBlock<byte[]> source)
+            {
+                int bytesProcessed = 0;
+
+                while (await source.OutputAvailableAsync())
+                {
+                    byte[] data = await source.ReceiveAsync();
+                    bytesProcessed += data.Length;
+                }
+
+                return bytesProcessed;
+            }
+
+            //static async Task<int> ConsumeAsync(IReceivableSourceBlock<byte[]> source)
+            //{
+            //    int bytesProcessed = 0;
+            //    while (await source.OutputAvailableAsync())
+            //    {
+            //        while (source.TryReceive(out byte[] data))
+            //        {
+            //            bytesProcessed += data.Length;
+            //        }
+            //    }
+            //    return bytesProcessed;
+            //}
+
+
+            static async Task Main()
+            {
+                var buffer = new BufferBlock<byte[]>();
+                var consumerTask = ConsumeAsync(buffer);
+                Produce(buffer);
+
+                var bytesProcessed = await consumerTask;
+
+                Console.WriteLine($"Processed {bytesProcessed:#,#} bytes.");
+            }
+        }
         
+        delegate void Printer();
+
+        public sealed class Circle
+        {
+            private double radius = 2;
+
+            public double Calculate(Func<double, double> op)
+            {
+                // var result = 2 * Math.PI * radius;
+                return op(radius);
+            }
+            public double GetCircumference(double radius)
+            {
+                return 2 * Math.PI * radius;
+            }
+            public void Test(double radius)
+            {
+                Calculate(GetCircumference);
+            }
+        }
 
     }
 }

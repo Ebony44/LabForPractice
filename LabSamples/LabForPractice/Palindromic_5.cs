@@ -81,6 +81,7 @@ namespace LabForPractice.LabForNumericOrder
             // 2. grab one by one
             const int ASSERTION_MAXCOUNT = 500;
             int assertionCount = 0;
+            string caughtString = string.Empty;
             while(true)
             {
                 
@@ -91,7 +92,56 @@ namespace LabForPractice.LabForNumericOrder
                 assertionCount++;
             }
             // 2.1. check length is even or odd()
-            #region sample from Cpp
+            #region
+            int midPoint = 0;
+            midPoint = midPoint / 2;
+            if (caughtString.Length % 2 == 0)
+            {
+                midPoint = midPoint / 2;
+            }
+            else
+            {
+                midPoint = (midPoint / 2);
+            }
+            #endregion
+
+            //#region sample from Cpp
+            //StringBuilder sb = new StringBuilder();
+            //string line = string.Empty;
+            //for (int i = (int)s.Length - 1; i >= 0; --i)
+            //{
+            //    sb.Append(s[i]);
+            //}
+            //line = sb.ToString();
+            //#endregion
+
+            return string.Empty;
+        }
+
+        public string LongestPalindrome_Altered(string s)
+        {
+            Dictionary<char, int> letterOccurence = new Dictionary<char, int>(capacity: 26);
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if(letterOccurence.ContainsKey(s[i]) )
+                {
+                    letterOccurence.Add(s[i], letterOccurence[s[i]] + 1);
+                }
+                else
+                {
+                    letterOccurence.Add(s[i], 1);
+                }
+            }
+
+            return string.Empty;
+        }
+
+        public bool CheckPalindromic(string s)
+        {
+            bool bIsValid = false;
+            bool bIsFinished = false;
+            #region sample from Cpp, store it with reversed order
             StringBuilder sb = new StringBuilder();
             string line = string.Empty;
             for (int i = (int)s.Length - 1; i >= 0; --i)
@@ -100,8 +150,12 @@ namespace LabForPractice.LabForNumericOrder
             }
             line = sb.ToString();
             #endregion
+            while (bIsFinished == false)
+            {
 
-            return line;
+            }
+            return bIsValid;
+
         }
 
     }

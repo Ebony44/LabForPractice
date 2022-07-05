@@ -72,10 +72,10 @@ namespace LabForPractice
         }
     }
 
-    static class TempStaticClass
+    static class LabIterationStaticClass
     {
         private static List<int> tempList;
-        static TempStaticClass()
+        static LabIterationStaticClass()
         {
             tempList = new List<int>(capacity: 5);
             tempList.Add(4);

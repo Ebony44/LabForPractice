@@ -220,7 +220,10 @@ namespace RegularExpression1
 
             Palindromic_5 lab5 = new Palindromic_5();
             // lab5.LongestPalindrome("hello world");
-
+            string tempString = string.Empty;
+            string tempString1 = "asdfqwerzxcv";
+            string tempString2 = "tgyhqwesdxav";
+            lab5.LongestCommonSubstring(tempString1, tempString2, out tempString);
             #endregion
 
             #region Lab_Ex_Interview_Question
@@ -242,27 +245,30 @@ namespace RegularExpression1
             #region
             
             List<Printer> printers = new List<Printer>();
-            // int i = 0;
-            
-            for (int i = 0; i < 10; i++)
-            {
-                //var tempValue = i;
-                //printers.Add(delegate { Console.WriteLine(tempValue); });
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    //var tempValue = i;
+            //    //printers.Add(delegate { Console.WriteLine(tempValue); });
 
-                printers.Add(delegate { Console.WriteLine(i); });
-            }
+            //    printers.Add(delegate { Console.WriteLine(i); });
+            //}
 
-            foreach (var printer in printers)
-            {
-                printer();
-            }
+            //foreach (var printer in printers)
+            //{
+            //    printer();
+            //}
             #endregion
 
             #region boxing unboxing
-            object tempObj;
-            int tempInt = 1;
-            tempObj = (object)tempInt;
-            var tempVariable = (int)tempObj;
+            //object tempObj;
+            //int tempInt = 1;
+            //tempObj = (object)tempInt;
+            //var tempVariable = (int)tempObj;
+            #endregion
+
+            #region Lab412
+            FizzBuzz_412 fizzBuzz_412 = new FizzBuzz_412();
+            fizzBuzz_412.FizzBuzz(15);
             #endregion
 
         }

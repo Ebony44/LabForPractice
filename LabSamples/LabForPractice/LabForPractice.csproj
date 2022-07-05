@@ -49,6 +49,7 @@
     <Compile Include="CalcClockAngle_Ex.cs" />
     <Compile Include="LabForNumericOrder\AddTwoNumbers_2.cs" />
     <Compile Include="Lab2_BoatsToSavePeople.cs" />
+    <Compile Include="LabForNumericOrder\FizzBuzz_412.cs" />
     <Compile Include="LabForNumericOrder\Longest_Substring_3.cs" />
     <Compile Include="LabForNumericOrder\MedianSorted_4.cs" />
     <Compile Include="MergeSort.cs" />

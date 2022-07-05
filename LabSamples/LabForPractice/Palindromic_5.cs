@@ -48,6 +48,12 @@ namespace LabForPractice.LabForNumericOrder
             Output: "q" // no palindromic matched
             start and end index
 
+        * Example 5:
+            
+            Input: s = "wxqwabbaffffffff"
+            Output: "abba" 
+            
+
          *  
          * 
          * 
@@ -120,34 +126,39 @@ namespace LabForPractice.LabForNumericOrder
 
         public string LongestPalindrome_Altered(string s)
         {
-            Dictionary<char, int> letterOccurence = new Dictionary<char, int>(capacity: 26);
+            #region old
+            //Dictionary<char, int> letterOccurence = new Dictionary<char, int>(capacity: 26);
 
-            for (int i = 0; i < s.Length; i++)
-            {
-                if(letterOccurence.ContainsKey(s[i]) )
-                {
-                    letterOccurence.Add(s[i], letterOccurence[s[i]] + 1);
-                }
-                else
-                {
-                    letterOccurence.Add(s[i], 1);
-                }
-            }
-            // check length is odd or even
+            //for (int i = 0; i < s.Length; i++)
+            //{
+            //    if(letterOccurence.ContainsKey(s[i]) )
+            //    {
+            //        letterOccurence.Add(s[i], letterOccurence[s[i]] + 1);
+            //    }
+            //    else
+            //    {
+            //        letterOccurence.Add(s[i], 1);
+            //    }
+            //}
+            //// check length is odd or even
 
-            bool bIsOdd = false;
-            if(s.Length % 2 == 0)
-            {
-                bIsOdd = false;
-            }
-            else
-            {
-                bIsOdd = true;
-            }
+            //bool bIsOdd = false;
+            //if(s.Length % 2 == 0)
+            //{
+            //    bIsOdd = false;
+            //}
+            //else
+            //{
+            //    bIsOdd = true;
+            //}
 
-            // check letters are matched
+            //// check letters are matched
+            #endregion
 
-            
+            #region
+            string reversedString = s.Reverse().ToString();
+            // abac -> caba
+            #endregion
 
             return string.Empty;
         }
@@ -172,6 +183,60 @@ namespace LabForPractice.LabForNumericOrder
             return bIsValid;
 
         }
+
+        public int LongestCommonSubstring(string str1, string str2, out string subStr)
+        {
+            subStr = string.Empty;
+
+            if (string.IsNullOrEmpty(str1) || string.IsNullOrEmpty(str2))
+                return 0;
+
+            int[,] num = new int[str1.Length, str2.Length];
+            int maxlen = 0;
+            int lastSubsBegin = 0;
+            StringBuilder subStrBuilder = new StringBuilder();
+
+            for (int i = 0; i < str1.Length; i++)
+            {
+                for (int j = 0; j < str2.Length; j++)
+                {
+                    if (str1[i] != str2[j])
+                    {
+                        num[i, j] = 0;
+                    }
+                    else
+                    {
+                        if ((i == 0) || (j == 0))
+                            num[i, j] = 1;
+                        else
+                            num[i, j] = 1 + num[i - 1, j - 1];
+
+                        if (num[i, j] > maxlen)
+                        {
+                            maxlen = num[i, j];
+
+                            int thisSubsBegin = i - num[i, j] + 1;
+
+                            if (lastSubsBegin == thisSubsBegin)
+                            {
+                                subStrBuilder.Append(str1[i]);
+                            }
+                            else
+                            {
+                                lastSubsBegin = thisSubsBegin;
+                                subStrBuilder.Length = 0;
+                                subStrBuilder.Append(str1.Substring(lastSubsBegin, (i + 1) - lastSubsBegin));
+                            }
+                        }
+                    }
+                }
+            }
+
+            subStr = subStrBuilder.ToString();
+
+            return maxlen;
+        }
+
 
     }
 }

@@ -126,6 +126,9 @@ namespace LabForPractice.LabForNumericOrder
             bool bIsLeft = false;
             bool bIsRight = false;
 
+            // var left = SearchDepth(root.left);
+            // var right = SearchDepth(root.right);
+
 
             return bIsBalanced;
         }

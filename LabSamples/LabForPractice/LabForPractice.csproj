@@ -49,9 +49,11 @@
     <Compile Include="CalcClockAngle_Ex.cs" />
     <Compile Include="LabForNumericOrder\AddTwoNumbers_2.cs" />
     <Compile Include="Lab2_BoatsToSavePeople.cs" />
+    <Compile Include="LabForNumericOrder\Balanced_Binary_Tree_110.cs" />
     <Compile Include="LabForNumericOrder\FizzBuzz_412.cs" />
     <Compile Include="LabForNumericOrder\Longest_Substring_3.cs" />
     <Compile Include="LabForNumericOrder\MedianSorted_4.cs" />
+    <Compile Include="LabForNumericOrder\Third_Maximum_Number_414.cs" />
     <Compile Include="MergeSort.cs" />
     <Compile Include="Palindromic_5.cs" />
     <Compile Include="PerformanceForIteration.cs" />

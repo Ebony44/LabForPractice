@@ -50,12 +50,25 @@ namespace LabForPractice.LabForNumericOrder
             9       20
         1   x       x   1
         -> true
+        [3,9,20,1,null,null,null]
+        ->true
+        
+        [3,9,null,1]
+        ->false
+        [3,9,20,1,null,null,null]
+        3
+        9   20
+        1x  xx
             
 
-        [3,9,20,1,2,3,4,1,4]
+        [3,9,20,1,2,3,4,1,4,1,null,null,null,null,null]
                  3
             9       20
-        1   2       3   1
+        1   2       3   4
+        14  1x      xx  xx
+        -> true
+        [3,9,20,1,2,3,4,1,4,1,null,null,null,null,null,1]
+        ->false
 
             Constraints:
             
@@ -110,8 +123,35 @@ namespace LabForPractice.LabForNumericOrder
 
             // check leftside deepest and rightside deepest
 
+            bool bIsLeft = false;
+            bool bIsRight = false;
+
 
             return bIsBalanced;
+        }
+        public int SearchDepth(TreeNode root)
+        {
+            var depth = 0;
+            if(root == null)
+            {
+                return 0;
+            }
+            var left = SearchDepth(root.left);
+            var right = SearchDepth(root.right);
+            int x = left - right;
+            if(x > 1)
+            {
+                return -1;
+            }
+            if(left>right)
+            {
+                return 1 + left;
+            }
+            else
+            {
+                return 1 + right;
+            }
+            return depth;
         }
 
         public void TestNodeCreateSecond(TreeNode root, int value)

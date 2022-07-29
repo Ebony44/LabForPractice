@@ -267,8 +267,16 @@ namespace RegularExpression1
             #endregion
 
             #region Lab412
-            FizzBuzz_412 fizzBuzz_412 = new FizzBuzz_412();
-            fizzBuzz_412.FizzBuzz(15);
+            //FizzBuzz_412 fizzBuzz_412 = new FizzBuzz_412();
+            //fizzBuzz_412.FizzBuzz(15);
+            #endregion
+
+            #region Lab414
+            Third_Maximum_Number_414 lab414 = new Third_Maximum_Number_414();
+            int thirdMax = 0;
+            // lab414.ThirdMax(new int[] { 1, 2, 3, 4 });
+            thirdMax = lab414.ThirdMax(new int[] { 2, 2, 3, 1 });
+            // 2,2,3,1
             #endregion
 
         }

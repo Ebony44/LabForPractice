@@ -218,12 +218,12 @@ namespace RegularExpression1
 
             #region Lab5
 
-            Palindromic_5 lab5 = new Palindromic_5();
-            // lab5.LongestPalindrome("hello world");
-            string tempString = string.Empty;
-            string tempString1 = "asdfqwerzxcv";
-            string tempString2 = "tgyhqwesdxav";
-            lab5.LongestCommonSubstring(tempString1, tempString2, out tempString);
+            //Palindromic_5 lab5 = new Palindromic_5();
+            //// lab5.LongestPalindrome("hello world");
+            //string tempString = string.Empty;
+            //string tempString1 = "asdfqwerzxcv";
+            //string tempString2 = "tgyhqwesdxav";
+            //lab5.LongestCommonSubstring(tempString1, tempString2, out tempString);
             #endregion
 
             #region Lab_Ex_Interview_Question
@@ -272,14 +272,20 @@ namespace RegularExpression1
             #endregion
 
             #region Lab414
-            Third_Maximum_Number_414 lab414 = new Third_Maximum_Number_414();
-            int thirdMax = 0;
-            // lab414.ThirdMax(new int[] { 1, 2, 3, 4 });
-            thirdMax = lab414.ThirdMax(new int[] { 2, 2, 3, 1 });
-            // 2,2,3,1
+            //Third_Maximum_Number_414 lab414 = new Third_Maximum_Number_414();
+            //int thirdMax = 0;
+            //// lab414.ThirdMax(new int[] { 1, 2, 3, 4 });
+            //thirdMax = lab414.ThirdMax(new int[] { 2, 2, 3, 1 });
+            //// 2,2,3,1
             #endregion
 
-        }
+            #region
+            long tempLong = -25;
+            string tempString3 = tempLong.ToString("N0");
+            string tempString4 = tempLong.ToString();
+            #endregion
+
+        } // bracket of main
 
 
         class DataflowProducerConsumer

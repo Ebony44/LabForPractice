@@ -52,6 +52,7 @@
     <Compile Include="LabForNumericOrder\AddTwoNumbers_2.cs" />
     <Compile Include="Lab2_BoatsToSavePeople.cs" />
     <Compile Include="LabForNumericOrder\Balanced_Binary_Tree_110.cs" />
+    <Compile Include="LabForNumericOrder\Container_With_Most_Water_11.cs" />
     <Compile Include="LabForNumericOrder\FizzBuzz_412.cs" />
     <Compile Include="LabForNumericOrder\Longest_Substring_3.cs" />
     <Compile Include="LabForNumericOrder\MedianSorted_4.cs" />

@@ -266,12 +266,12 @@ namespace RegularExpression1
             //var tempVariable = (int)tempObj;
             #endregion
 
-            #region Lab412
+            #region Lab 412
             //FizzBuzz_412 fizzBuzz_412 = new FizzBuzz_412();
             //fizzBuzz_412.FizzBuzz(15);
             #endregion
 
-            #region Lab414
+            #region Lab 414
             //Third_Maximum_Number_414 lab414 = new Third_Maximum_Number_414();
             //int thirdMax = 0;
             //// lab414.ThirdMax(new int[] { 1, 2, 3, 4 });
@@ -284,6 +284,18 @@ namespace RegularExpression1
             string tempString3 = tempLong.ToString("N0");
             string tempString4 = tempLong.ToString();
             #endregion
+
+
+            #region Lab 11
+            Container_With_Most_Water_11 lab11 = new Container_With_Most_Water_11();
+
+            // int[] tempInt = new int[] { 1, 2 }; 
+            int[] tempInt = new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+
+            // int tempArea =  lab11.MaxAreaNaive(tempInt);
+            int tempArea = lab11.MaxArea(tempInt);
+            #endregion
+
 
         } // bracket of main
 

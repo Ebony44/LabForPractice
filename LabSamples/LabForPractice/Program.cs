@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 
 using LabForPractice.LabForNumericOrder;
+using LabForPractice.GfGReferences;
 
 namespace RegularExpression1
 {
@@ -287,13 +288,38 @@ namespace RegularExpression1
 
 
             #region Lab 11
-            Container_With_Most_Water_11 lab11 = new Container_With_Most_Water_11();
+            // Container_With_Most_Water_11 lab11 = new Container_With_Most_Water_11();
+            // 
+            // // int[] tempInt = new int[] { 1, 2 }; 
+            // int[] tempInt = new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+            // 
+            // // int tempArea =  lab11.MaxAreaNaive(tempInt);
+            // int tempArea = lab11.MaxArea(tempInt);
+            #endregion
 
-            // int[] tempInt = new int[] { 1, 2 }; 
-            int[] tempInt = new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+            #region Lab 121
 
-            // int tempArea =  lab11.MaxAreaNaive(tempInt);
-            int tempArea = lab11.MaxArea(tempInt);
+            // Best_Time_to_Buy_and_Sell_Stock_121 lab121 = new Best_Time_to_Buy_and_Sell_Stock_121();
+            // 
+            // // int[] tempInt = new int[] { 1, 2 };
+            // // int[] tempInt = new int[] { 1, 2, 4 };
+            // // int[] tempInt = new int[] { 8, 6, 2, 5, 4, 8, 3, 7 };
+            // // int[] tempInt = new int[] { 7, 6, 4, 3, 1 };
+            // // int[] tempInt = new int[] { 7, 1, 5, 3, 6, 4 };
+            // int[] tempInt = new int[] { 5, 6, 7, 6, 7, 6, 4, 4, 4, 4, 4, 4 };
+            // // 7,6,4,3,1
+            // // 7,1,5,3,6,4
+            // // 5,6,7,6,7,6,4,4,4,4,4,4
+            // int tempResult = lab121.MaxProfit(tempInt);
+            // // int tempResult = lab121.MaxProfitNaive(tempInt);
+
+            #endregion
+            #region GfG Greedy algorithm example
+            // PrintEgyptianFraction.printEgyptian(18, 6);
+
+            #endregion
+
+            #region temp lerp
             #endregion
 
 
@@ -374,6 +400,11 @@ namespace RegularExpression1
             {
                 Calculate(GetCircumference);
             }
+        }
+
+        public static void CalcLerpWithoutFloating(float t)
+        {
+            
         }
 
     }

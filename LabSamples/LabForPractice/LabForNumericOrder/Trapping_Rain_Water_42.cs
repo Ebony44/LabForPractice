@@ -157,5 +157,41 @@ namespace LabForPractice.LabForNumericOrder
             return result;
 
         }
+
+
+        // ex
+        // monotonic stack
+
+        public Stack<int> FindBuildings(int[] buildings)
+        {
+            // find building which can see senset(from east)
+            // which means if array exists like 
+            // 18, 14, 13, 16, 12
+            // then 0 index, 3rd, 4th building can see sunset
+            // 
+            Stack<int> buildingStack = new Stack<int>(buildings.Length);
+
+            for (int i = 0; i < buildings.Length; i++)
+            {
+                int currentHeight = buildings[i];
+                buildingStack.Push(i);
+                // int poppedValue = 0;
+                int tempAssertion = 0;
+                while (buildingStack.Count > 0 && currentHeight >= buildings[buildingStack.Peek()])
+                {
+                    buildingStack.Pop();
+                    tempAssertion++;
+                    if(tempAssertion > 512)
+                    {
+                        Console.WriteLine("assertion failed");
+                        break;
+                    }
+                }
+                buildingStack.Push(i);
+            }
+            return buildingStack;
+        }
+        
+
     }
 }

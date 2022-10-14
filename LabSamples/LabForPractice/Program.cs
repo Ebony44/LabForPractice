@@ -321,6 +321,25 @@ namespace RegularExpression1
 
             #region temp lerp
             #endregion
+            #region lab 42
+            //Trapping_Rain_Water_42 lab42 = new Trapping_Rain_Water_42();
+            //// int[] height = new int[] { 4, 2, 0, 3, 2, 5, 3, 0, 0, 5 };
+            //// int[] height = new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
+            //// var result = lab42.Trap(height);
+
+            //int[] buildings = new int[] { 18, 14, 13, 16, 12 };
+            //var buildingStacks = lab42.FindBuildings(buildings);
+            #endregion
+
+            #region lab 739
+            // 30,40,50,60
+            Daily_Temperatures_739 lab739 = new Daily_Temperatures_739();
+            // var temperatures = new int[] { 73, 74, 75, 71, 69, 72, 76, 73 };
+            // var temperatures = new int[] { 90,41,42,43,44 };
+            // var temperatures = new int[] { 90};
+            var temperatures = new int[] { 90, 90, 90, 90, 90 };
+            var lab_739_result = lab739.DailyTemperatures(temperatures);
+            #endregion
 
 
         } // bracket of main

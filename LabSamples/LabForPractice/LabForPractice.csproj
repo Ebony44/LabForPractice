@@ -55,6 +55,7 @@
     <Compile Include="LabForNumericOrder\Balanced_Binary_Tree_110.cs" />
     <Compile Include="LabForNumericOrder\Best_Time_to_Buy_and_Sell_Stock_121.cs" />
     <Compile Include="LabForNumericOrder\Container_With_Most_Water_11.cs" />
+    <Compile Include="LabForNumericOrder\Daily_Temperatures_739.cs" />
     <Compile Include="LabForNumericOrder\FizzBuzz_412.cs" />
     <Compile Include="LabForNumericOrder\Longest_Substring_3.cs" />
     <Compile Include="LabForNumericOrder\MedianSorted_4.cs" />

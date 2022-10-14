@@ -161,6 +161,7 @@ namespace LabForPractice.LabForNumericOrder
 
         // ex
         // monotonic stack
+        // https://levelup.gitconnected.com/what-is-a-monotonic-stack-f10d79609c45
 
         public Stack<int> FindBuildings(int[] buildings)
         {

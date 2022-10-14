@@ -333,12 +333,19 @@ namespace RegularExpression1
 
             #region lab 739
             // 30,40,50,60
-            Daily_Temperatures_739 lab739 = new Daily_Temperatures_739();
-            // var temperatures = new int[] { 73, 74, 75, 71, 69, 72, 76, 73 };
-            // var temperatures = new int[] { 90,41,42,43,44 };
-            // var temperatures = new int[] { 90};
-            var temperatures = new int[] { 90, 90, 90, 90, 90 };
-            var lab_739_result = lab739.DailyTemperatures(temperatures);
+            // Daily_Temperatures_739 lab739 = new Daily_Temperatures_739();
+            // // var temperatures = new int[] { 73, 74, 75, 71, 69, 72, 76, 73 };
+            // // var temperatures = new int[] { 90,41,42,43,44 };
+            // // var temperatures = new int[] { 90};
+            // var temperatures = new int[] { 90, 90, 90, 90, 90 };
+            // var lab_739_result = lab739.DailyTemperatures(temperatures);
+            #endregion
+
+            #region lab 2101
+            Detonate_the_Maximum_Bombs_2101 lab2101 = new Detonate_the_Maximum_Bombs_2101();
+            Detonate_the_Maximum_Bombs_2101.float2 a = new Detonate_the_Maximum_Bombs_2101.float2(5f,1f);
+            Detonate_the_Maximum_Bombs_2101.float2 b = new Detonate_the_Maximum_Bombs_2101.float2(1f,1f);
+            var tempDist = lab2101.Distance(a,b);
             #endregion
 
 
@@ -424,6 +431,18 @@ namespace RegularExpression1
         public static void CalcLerpWithoutFloating(float t)
         {
             
+        }
+
+        public static void Distance(float[] a, float[] b)
+        {
+            int x = 0;
+            int y = 1;
+            // Math.Sqrt(  )
+            var tempDistance = Math.Sqrt((a[x] - b[x]) * (a[x] - b[x]) + (a[y] - b[y]) * (a[y] - b[y]));
+            // 0,0
+            // 1,1
+            // (0-1)^2 + (0-1)^2
+            // 
         }
 
     }

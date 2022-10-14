@@ -46,7 +46,7 @@ namespace LabForPractice.LabForNumericOrder
             //  Input: temperatures = [1, 3, 2, 4]
             //    Output:[1,2,1,0]
 
-            #region
+            #region function
             int[] waitingDays = new int[temperatures.Length];
             
             if(temperatures.Length == 1)

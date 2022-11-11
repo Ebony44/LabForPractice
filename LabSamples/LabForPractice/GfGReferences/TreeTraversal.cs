@@ -95,5 +95,41 @@ namespace LabForPractice.GfGReferences
 
         }
 
+        public class BreadthFirstTraversal_2
+        {
+            Node root;
+
+            /* Given a binary tree. Print
+            its nodes in level order using
+             array for implementing queue */
+            void printLevelOrder()
+            {
+                Queue<Node> queue = new Queue<Node>();
+                queue.Enqueue(root);
+                while (queue.Count != 0)
+                {
+
+                    Node tempNode = queue.Dequeue();
+                    Console.Write(tempNode.data + " ");
+
+                    /*Enqueue left child */
+                    if (tempNode.left != null)
+                    {
+                        queue.Enqueue(tempNode.left);
+                    }
+
+                    /*Enqueue right child */
+                    if (tempNode.right != null)
+                    {
+                        queue.Enqueue(tempNode.right);
+                    }
+                }
+            }
+
+
+
+
+        }
+
     }
 }

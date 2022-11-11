@@ -63,6 +63,7 @@
     <Compile Include="LabForNumericOrder\MedianSorted_4.cs" />
     <Compile Include="LabForNumericOrder\Third_Maximum_Number_414.cs" />
     <Compile Include="LabForNumericOrder\Trapping_Rain_Water_42.cs" />
+    <Compile Include="LabForNumericOrder\Valid_Sudoku_36.cs" />
     <Compile Include="MergeSort.cs" />
     <Compile Include="Palindromic_5.cs" />
     <Compile Include="PerformanceForIteration.cs" />

@@ -343,11 +343,87 @@ namespace RegularExpression1
 
             #region lab 2101
             Detonate_the_Maximum_Bombs_2101 lab2101 = new Detonate_the_Maximum_Bombs_2101();
-            Detonate_the_Maximum_Bombs_2101.float2 a = new Detonate_the_Maximum_Bombs_2101.float2(5f,1f);
-            Detonate_the_Maximum_Bombs_2101.float2 b = new Detonate_the_Maximum_Bombs_2101.float2(1f,1f);
-            var tempDist = lab2101.Distance(a,b);
+            // Detonate_the_Maximum_Bombs_2101.float2 a = new Detonate_the_Maximum_Bombs_2101.float2(5f,1f);
+            // Detonate_the_Maximum_Bombs_2101.float2 b = new Detonate_the_Maximum_Bombs_2101.float2(1f,1f);
+            // var tempDist = lab2101.Distance(a,b);
+
+
+            // int[][] bombs = new int[][] { new int[]{ 2, 1, 3 }, new int[]{ 6, 1, 4 } };
+            int[][] bombs = new int[][] { 
+                new int[] { 1, 2, 3 }, 
+                new int[] { 2, 3, 1 },
+                new int[] { 3, 4, 2 },
+                new int[] { 4, 5, 3 },
+                new int[] { 5, 6, 4 }
+            };
+            // Input: bombs = [[1,2,3],[2,3,1],[3,4,2],[4,5,3],[5,6,4]]
+            // int[][] bombs = new int[3][];
+            //for (int i = 0; i < bombs.Length; i++)
+            //{
+            //    bombs[i] = 
+            //}
+
+            // lab2101.MaximumDetonation(bombs);
+
             #endregion
 
+            #region lab36
+            /*
+             * 
+             * [
+             ['5','3','.','.','7','.','.','.','.']
+            ,['6','.','.','1','9','5','.','.','.']
+            ,['.','9','8','.','.','.','.','6','.']
+            ,['8','.','.','.','6','.','.','.','3']
+            ,['4','.','.','8','.','3','.','.','1']
+            ,['7','.','.','.','2','.','.','.','6']
+            ,['.','6','.','.','.','.','2','8','.']
+            ,['.','.','.','4','1','9','.','.','5']
+            ,['.','.','.','.','8','.','.','7','9']
+            ]
+             * 
+             */
+            Valid_Sudoku_36 lab36 = new Valid_Sudoku_36();
+            var tempCharArray = new char[][]
+                {
+                    //new char[]{ '5','3','.','.','7','.','.','.','.' },
+                    //new char[]{ '6','.','.','1','9','5','.','.','.' },
+                    //new char[]{ '.','9','8','.','.','.','.','6','.' },
+                    //new char[]{ '8','.','.','.','6','.','.','.','3' },
+                    //new char[]{ '4','.','.','8','.','3','.','.','1' },
+                    //new char[]{ '7','.','.','.','2','.','.','.','6' },
+                    //new char[]{ '.','6','.','.','.','.','2','8','.' },
+                    //new char[]{ '.','.','.','4','1','9','.','.','5' },
+                    //new char[]{ '.','.','.','.','8','.','.','7','9' },
+
+                    new char[]{ '5','3','.','.','7','.','.','.','.' },
+                    new char[]{ '6','.','.','1','9','5','.','.','.' },
+                    new char[]{ '.','9','8','.','.','.','.','6','.' },
+                    new char[]{ '8','.','.','.','6','.','.','.','3' },
+                    new char[]{ '4','.','.','8','.','3','.','.','1' },
+                    new char[]{ '7','.','.','.','2','.','.','.','6' },
+                    new char[]{ '.','6','.','.','.','.','.','8','.' },
+                    new char[]{ '.','.','.','4','1','9','.','.','5' },
+                    new char[]{ '.','.','.','.','8','.','.','7','9' },
+
+
+
+                };
+            var lab36Result = lab36.IsValidSudoku(tempCharArray);
+            //var tempChar = tempCharArray[7][1];
+            #endregion
+
+            #region 
+            #endregion
+
+            #region ipa
+            string tempData = "abcdefgh";
+            string tempData2 = tempData.Substring(0, tempData.Length / 2);
+            string tempData3 = tempData.Substring(tempData.Length / 2, tempData.Length / 2);
+            // "{Payload:{\\json\\:\\{\\\\orderId\\\\:\\\\GPA.3333-0344-2240-00548\\\\,";
+
+
+            #endregion
 
         } // bracket of main
 
@@ -444,6 +520,17 @@ namespace RegularExpression1
             // (0-1)^2 + (0-1)^2
             // 
         }
+        public static string getBetween(string strSource, string strStart, string strEnd)
+        {
+            if (strSource.Contains(strStart) && strSource.Contains(strEnd))
+            {
+                int Start, End;
+                Start = strSource.IndexOf(strStart, 0) + strStart.Length;
+                End = strSource.IndexOf(strEnd, Start);
+                return strSource.Substring(Start, End - Start);
+            }
 
+            return "";
+        }
     }
 }

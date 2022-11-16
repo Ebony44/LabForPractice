@@ -59,6 +59,7 @@
     <Compile Include="LabForNumericOrder\Daily_Temperatures_739.cs" />
     <Compile Include="LabForNumericOrder\Detonate_the_Maximum_Bombs_2101.cs" />
     <Compile Include="LabForNumericOrder\FizzBuzz_412.cs" />
+    <Compile Include="LabForNumericOrder\Integer_to_Roman_12.cs" />
     <Compile Include="LabForNumericOrder\Longest_Substring_3.cs" />
     <Compile Include="LabForNumericOrder\MedianSorted_4.cs" />
     <Compile Include="LabForNumericOrder\Third_Maximum_Number_414.cs" />

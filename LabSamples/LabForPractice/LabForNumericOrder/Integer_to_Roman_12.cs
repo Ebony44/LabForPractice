@@ -66,8 +66,71 @@ namespace LabForPractice.LabForNumericOrder
         public string IntToRoman(int num)
         {
             var result = string.Empty;
+            // 0.
+            // 3999 -> MMMCMXCIX
+            // MMM(3000)
+            // CM(900)
+            // XC(90)
+            // IX(9)
+            StringBuilder sb = new StringBuilder();
+            var fourth = num / 1000;
+            var third = (num / 100) % 10;
+            var second = (num / 10) % 10;
+            var first = num % 10;
+
+            if (fourth != 0)
+            {
+                for (int i = 0; i < fourth; i++)
+                {
+                    sb.Append("M");
+                }
+            }
+            if(third != 0)
+            {
+                if (third == 4)
+                {
+                    sb.Append("CD");
+                }
+                else if(third == 9)
+                {
+                    sb.Append("CM");
+                }
+                else if (third >= 5)
+                {
+                    var tempThird = third - 5;
+                    if(tempThird >= 0)
+                    {
+                        
+                    }
+                    else if(tempThird < 0)
+                    {
+
+                    }
+                    sb.Append("D");
+                }
+                
+            }
 
             return result;
+        }
+
+        public bool IsfourOrNine(int num)
+        {
+            return num == 4 || num == 9;
+        }
+        public string GetStringFromCount(int iterateCount, string appendString)
+        {
+            var resultString = string.Empty;
+            if(iterateCount >= 5)
+            {
+
+            }
+            else
+            {
+
+            }
+            return resultString;
+            
         }
     }
 }

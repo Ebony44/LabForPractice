@@ -418,7 +418,7 @@ namespace RegularExpression1
 
             #region lab 12
             Integer_to_Roman_12 lab12 = new Integer_to_Roman_12();
-            var inputInt = 56;
+            var inputInt = 3;
             var result = lab12.IntToRoman(inputInt);
             //var result = lab12.IntToRoman(1234);
             #endregion

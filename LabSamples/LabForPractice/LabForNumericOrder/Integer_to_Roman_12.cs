@@ -50,6 +50,10 @@ namespace LabForPractice.LabForNumericOrder
         Input: num = 1994
         Output: "MCMXCIV"
         Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+
+        4:
+        num = 300
+        output: "CCC"
         
          
         
@@ -85,7 +89,9 @@ namespace LabForPractice.LabForNumericOrder
                     sb.Append("M");
                 }
             }
-            if(third != 0)
+            var standString = string.Empty;
+            var appendString = string.Empty;
+            if (third != 0)
             {
                 if (third == 4)
                 {
@@ -95,42 +101,87 @@ namespace LabForPractice.LabForNumericOrder
                 {
                     sb.Append("CM");
                 }
-                else if (third >= 5)
+                else
                 {
-                    var tempThird = third - 5;
-                    if(tempThird >= 0)
-                    {
-                        
-                    }
-                    else if(tempThird < 0)
-                    {
-
-                    }
-                    sb.Append("D");
+                    // standString = third >= 5 ? "M" : "L";
+                    standString = "D";
+                    appendString = "C";
+                    var getString = GetStringFromCount(third, appendString, standString);
+                    sb.Append(getString);
+                    // sb.Append("D");
                 }
                 
             }
 
-            return result;
+            if(second != 0)
+            {
+                if (second == 4)
+                {
+                    sb.Append("XL");
+                }
+                else if (second == 9)
+                {
+                    sb.Append("XC");
+                }
+                else
+                {
+                    standString = "L";
+                    appendString = "X";
+                    var getString = GetStringFromCount(second, appendString, standString);
+                    sb.Append(getString);
+                }
+            }
+            if(first != 0)
+            {
+                if (first == 4)
+                {
+                    sb.Append("IV");
+                }
+                else if (first == 9)
+                {
+                    sb.Append("IX");
+                }
+                else
+                {
+                    standString = "V";
+                    appendString = "I";
+                    var getString = GetStringFromCount(first, appendString, standString);
+                    sb.Append(getString);
+                }
+            }
+            
+            return sb.ToString();
         }
+
+        public string GetStringFromCount(int iterateCount, string appendString, string standString)
+        {
+            StringBuilder resultString = new StringBuilder();
+            if(iterateCount >= 5)
+            {
+                // letter after 
+                resultString.Append(standString);
+                for (int i = 0; i < iterateCount - 5; i++)
+                {
+                    resultString.Append(appendString);
+                }
+            }
+            else
+            {
+                // letter before
+                for (int i = 0; i < iterateCount; i++)
+                {
+                    resultString.Append(appendString);
+                }
+                //resultString.Append(standString);
+            }
+            return resultString.ToString();
+            
+        }
+
 
         public bool IsfourOrNine(int num)
         {
             return num == 4 || num == 9;
-        }
-        public string GetStringFromCount(int iterateCount, string appendString)
-        {
-            var resultString = string.Empty;
-            if(iterateCount >= 5)
-            {
-
-            }
-            else
-            {
-
-            }
-            return resultString;
-            
         }
     }
 }

@@ -244,7 +244,7 @@ namespace RegularExpression1
             #endregion
 
             #region
-            
+
             List<Printer> printers = new List<Printer>();
             //for (int i = 0; i < 10; i++)
             //{
@@ -349,8 +349,8 @@ namespace RegularExpression1
 
 
             // int[][] bombs = new int[][] { new int[]{ 2, 1, 3 }, new int[]{ 6, 1, 4 } };
-            int[][] bombs = new int[][] { 
-                new int[] { 1, 2, 3 }, 
+            int[][] bombs = new int[][] {
+                new int[] { 1, 2, 3 },
                 new int[] { 2, 3, 1 },
                 new int[] { 3, 4, 2 },
                 new int[] { 4, 5, 3 },
@@ -417,20 +417,78 @@ namespace RegularExpression1
             #endregion
 
             #region lab 12
-            Integer_to_Roman_12 lab12 = new Integer_to_Roman_12();
-            var inputInt = 3;
-            var result = lab12.IntToRoman(inputInt);
+            //Integer_to_Roman_12 lab12 = new Integer_to_Roman_12();
+            //var inputInt = 3;
+            //var result = lab12.IntToRoman(inputInt);
             //var result = lab12.IntToRoman(1234);
             #endregion
 
             #region ipa
-            string tempData = "abcdefgh";
-            string tempData2 = tempData.Substring(0, tempData.Length / 2);
-            string tempData3 = tempData.Substring(tempData.Length / 2, tempData.Length / 2);
+            //string tempData = "abcdefgh";
+            //string tempData2 = tempData.Substring(0, tempData.Length / 2);
+            //string tempData3 = tempData.Substring(tempData.Length / 2, tempData.Length / 2);
             // "{Payload:{\\json\\:\\{\\\\orderId\\\\:\\\\GPA.3333-0344-2240-00548\\\\,";
 
 
             #endregion
+
+            #region
+            //var tempString123 = "hlmomlnlgioiblinclejodko.AO-J1Ox91napLWxxDREDjtrx_j0ChEBcWCjNHgLFENLpbqrPHxSBMwxbR3qbp9RFiZ9NvWX4IocTsLR-YWovKtUxHlGZjGYDdg&sid=21a216a3135f0ec6310544b13e0c52be98666620221122132457";
+            //var temptempInt = tempString123.Length;
+            #endregion
+
+            #region lab 13
+            //Roman_to_Integer_13 lab13 = new Roman_to_Integer_13();
+            //var inputString = "MM";
+            //var labResult = lab13.RomanToInt(inputString);
+            #endregion
+
+            #region GfG, show combination
+            //int[] arr = { 1, 2, 3, 4, 5 };
+            //int r = 3;
+            //int n = arr.Length;
+
+            //int[] arr = { 13, 14, 23, 24 };
+            //int r = 2;
+            //int n = arr.Length;
+
+            //for (int i = 0; i <= r; i++)
+            //{
+            //    CombinationUtil.ShowCombination(arr, n, i);
+            //}
+
+            //int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
+            //int r = 4;
+            //int n = arr.Length;
+
+            //for (int i = 3; i <= r; i++)
+            //{
+            //    CombinationUtil.ShowCombination(arr, n, i);
+            //}
+
+
+            #endregion
+            #region two dimension array
+            LabForPractice.Fiddling.TwoDimensionalArray tempClass = new LabForPractice.Fiddling.TwoDimensionalArray();
+            tempClass.TestDeclareTwoDimensionalArray();
+            #endregion
+
+            #region assmebly location
+
+            Console.WriteLine(" location of executed assembly is " + System.Reflection.Assembly.GetExecutingAssembly().Location);
+
+            // LabForPractice.Fiddling.OthersWork.CSVReader csvReader = new LabForPractice.Fiddling.OthersWork.CSVReader();
+            // KEY,Korean,English,Myanmar,Thailand,India
+            //            T_LOGIN,로그인,Log in,အကောင့်၀င်ရန်,เข้าสู่ระบบ,
+            //T_LOGOUT,로그아웃,Log out,လော့အောက်,,
+            string tempString = "KEY,Korean,English\r\n";
+            tempString += "T_LOGIN,로그인,Log in\r\n";
+            tempString += "T_LOGOUT,로그아웃,Log out\r\n";
+            // LabForPractice.Fiddling.OthersWork.CSVReader.TempTest("asdf,fdsa,fasdf");
+            // LabForPractice.Fiddling.OthersWork.CSVReader.TempTest(tempString);
+            LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile();
+            #endregion
+
 
         } // bracket of main
 

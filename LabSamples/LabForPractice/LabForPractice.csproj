@@ -48,7 +48,10 @@
   <ItemGroup>
     <Compile Include="CalcClockAngle_Ex.cs" />
     <Compile Include="Fiddling\FTPUpload.cs" />
+    <Compile Include="Fiddling\OthersWork\CSVReader.cs" />
     <Compile Include="Fiddling\OthersWork\GoogleFileDownloader.cs" />
+    <Compile Include="Fiddling\TwoDimensionalArray.cs" />
+    <Compile Include="GfGReferences\CombinationUtil.cs" />
     <Compile Include="GfGReferences\printEgyptianFraction.cs" />
     <Compile Include="GfGReferences\TreeTraversal.cs" />
     <Compile Include="LabForNumericOrder\AddTwoNumbers_2.cs" />
@@ -62,6 +65,7 @@
     <Compile Include="LabForNumericOrder\Integer_to_Roman_12.cs" />
     <Compile Include="LabForNumericOrder\Longest_Substring_3.cs" />
     <Compile Include="LabForNumericOrder\MedianSorted_4.cs" />
+    <Compile Include="LabForNumericOrder\Roman_to_Integer_13.cs" />
     <Compile Include="LabForNumericOrder\Third_Maximum_Number_414.cs" />
     <Compile Include="LabForNumericOrder\Trapping_Rain_Water_42.cs" />
     <Compile Include="LabForNumericOrder\Valid_Sudoku_36.cs" />

@@ -68,6 +68,15 @@ Constraints:
         {
             var result = 0;
             // s length 
+            // search first
+            StringBuilder sb = new StringBuilder(s);
+            
+            //for (int i = 0; i < s.Length; i++)
+            //{
+            //    // string.
+
+            //}
+
 
             return result;
 

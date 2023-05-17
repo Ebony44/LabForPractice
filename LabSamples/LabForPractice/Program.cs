@@ -485,7 +485,7 @@ namespace RegularExpression1
             tempString += "T_LOGIN,로그인,Log in\r\n";
             tempString += "T_LOGOUT,로그아웃,Log out\r\n";
             // LabForPractice.Fiddling.OthersWork.CSVReader.TempTest("asdf,fdsa,fasdf");
-            // LabForPractice.Fiddling.OthersWork.CSVReader.TempTest(tempString);
+            LabForPractice.Fiddling.OthersWork.CSVReader.TempTest(tempString);
             LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile();
             #endregion
 

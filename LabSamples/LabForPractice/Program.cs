@@ -10,6 +10,8 @@ using System.Threading.Tasks.Dataflow;
 
 using LabForPractice.LabForNumericOrder;
 using LabForPractice.GfGReferences;
+using LabForPractice.Fiddling;
+using System.Reflection;
 
 namespace RegularExpression1
 {
@@ -475,20 +477,29 @@ namespace RegularExpression1
 
             #region assmebly location
 
-            Console.WriteLine(" location of executed assembly is " + System.Reflection.Assembly.GetExecutingAssembly().Location);
+            //Console.WriteLine(" location of executed assembly is " + System.Reflection.Assembly.GetExecutingAssembly().Location);
 
-            // LabForPractice.Fiddling.OthersWork.CSVReader csvReader = new LabForPractice.Fiddling.OthersWork.CSVReader();
-            // KEY,Korean,English,Myanmar,Thailand,India
-            //            T_LOGIN,로그인,Log in,အကောင့်၀င်ရန်,เข้าสู่ระบบ,
-            //T_LOGOUT,로그아웃,Log out,လော့အောက်,,
-            string tempString = "KEY,Korean,English\r\n";
-            tempString += "T_LOGIN,로그인,Log in\r\n";
-            tempString += "T_LOGOUT,로그아웃,Log out\r\n";
-            // LabForPractice.Fiddling.OthersWork.CSVReader.TempTest("asdf,fdsa,fasdf");
-            LabForPractice.Fiddling.OthersWork.CSVReader.TempTest(tempString);
-            LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile();
+            //// LabForPractice.Fiddling.OthersWork.CSVReader csvReader = new LabForPractice.Fiddling.OthersWork.CSVReader();
+            //// KEY,Korean,English,Myanmar,Thailand,India
+            ////            T_LOGIN,로그인,Log in,အကောင့်၀င်ရန်,เข้าสู่ระบบ,
+            ////T_LOGOUT,로그아웃,Log out,လော့အောက်,,
+            //string tempString = "KEY,Korean,English\r\n";
+            //tempString += "T_LOGIN,로그인,Log in\r\n";
+            //tempString += "T_LOGOUT,로그아웃,Log out\r\n";
+            //// LabForPractice.Fiddling.OthersWork.CSVReader.TempTest("asdf,fdsa,fasdf");
+            //LabForPractice.Fiddling.OthersWork.CSVReader.TempTest(tempString);
+            //LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile();
             #endregion
 
+            #region reflection practice
+            ReflectionPracticeClass tempPracClass = new ReflectionPracticeClass(1,2);
+            Type setType = typeof(ReflectionPracticeClass);
+            Type setBaseType = typeof(ReflectionPracticeClass).BaseType;
+            FieldInfo myField = setType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo myBaseField = setBaseType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
+            // var tempInt =  (int)myField.GetValue(tempPracClass);
+            var tempInt = (int)myBaseField.GetValue(tempPracClass);
+            #endregion
 
         } // bracket of main
 

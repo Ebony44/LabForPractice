@@ -1,0 +1,6 @@
+KEY,MinPriceRange,MaxPriceRange,MinQuantityRange,MaxQuantityRange
+HealthRecoveryInjection,,,,
+MammaryGlandRecoveryInjection,,,,
+VenerealDiseaseRecoveryInjection,,,,
+OvumRecoveryInjection_GOLD,300,700,1,4
+OvumRecoveryInjection_SOUL,100,200,1,3

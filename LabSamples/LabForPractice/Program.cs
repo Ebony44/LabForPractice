@@ -283,9 +283,9 @@ namespace RegularExpression1
             #endregion
 
             #region
-            long tempLong = -25;
-            string tempString3 = tempLong.ToString("N0");
-            string tempString4 = tempLong.ToString();
+            //long tempLong = -25;
+            //string tempString3 = tempLong.ToString("N0");
+            //string tempString4 = tempLong.ToString();
             #endregion
 
 
@@ -475,20 +475,30 @@ namespace RegularExpression1
             tempClass.TestDeclareTwoDimensionalArray();
             #endregion
 
-            #region assmebly location
+            #region assmebly location and CSV file loading
 
-            //Console.WriteLine(" location of executed assembly is " + System.Reflection.Assembly.GetExecutingAssembly().Location);
+            Console.WriteLine(" location of executed assembly is " + System.Reflection.Assembly.GetExecutingAssembly().Location);
 
-            //// LabForPractice.Fiddling.OthersWork.CSVReader csvReader = new LabForPractice.Fiddling.OthersWork.CSVReader();
-            //// KEY,Korean,English,Myanmar,Thailand,India
-            ////            T_LOGIN,로그인,Log in,အကောင့်၀င်ရန်,เข้าสู่ระบบ,
-            ////T_LOGOUT,로그아웃,Log out,လော့အောက်,,
+            // LabForPractice.Fiddling.OthersWork.CSVReader csvReader = new LabForPractice.Fiddling.OthersWork.CSVReader();
+            // KEY,Korean,English,Myanmar,Thailand,India
+            //            T_LOGIN,로그인,Log in,အကောင့်၀င်ရန်,เข้าสู่ระบบ,
+            //T_LOGOUT,로그아웃,Log out,လော့အောက်,,
             //string tempString = "KEY,Korean,English\r\n";
             //tempString += "T_LOGIN,로그인,Log in\r\n";
             //tempString += "T_LOGOUT,로그아웃,Log out\r\n";
             //// LabForPractice.Fiddling.OthersWork.CSVReader.TempTest("asdf,fdsa,fasdf");
-            //LabForPractice.Fiddling.OthersWork.CSVReader.TempTest(tempString);
-            //LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile();
+            //// LabForPractice.Fiddling.OthersWork.CSVReader.TempTest(tempString);
+            //// LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile();
+            //var tempPath = "D:\\Lab\\Repo\\LabSamples\\LabForPractice_CSV_files\\TempTestCSV.csv";
+            //var tempString2 = LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile(tempPath);
+            //LabForPractice.Fiddling.OthersWork.CSVReader.TempTest(tempString2);
+
+            //
+            // LabForPractice.Fiddling.TestItemSetupForModding
+            var tempPath2 = "D:\\Lab\\Repo\\LabSamples\\LabForPractice_CSV_files\\Text_MercItemInfo.csv";
+            var tempString3 = LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile(tempPath2);
+            LabForPractice.Fiddling.TestItemSetupForModding.StringSplitAndInsertToCollections(tempString3);
+            // LabForPractice.Fiddling.TestItemSetupForModding.ReadDataWithEnum()
             #endregion
 
             #region reflection practice

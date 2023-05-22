@@ -51,6 +51,7 @@
     <Compile Include="Fiddling\OthersWork\CSVReader.cs" />
     <Compile Include="Fiddling\OthersWork\GoogleFileDownloader.cs" />
     <Compile Include="Fiddling\ReflectionPracticeClass.cs" />
+    <Compile Include="Fiddling\TestItemSetupForModding.cs" />
     <Compile Include="Fiddling\TwoDimensionalArray.cs" />
     <Compile Include="GfGReferences\CombinationUtil.cs" />
     <Compile Include="GfGReferences\printEgyptianFraction.cs" />

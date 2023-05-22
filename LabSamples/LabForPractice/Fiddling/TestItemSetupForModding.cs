@@ -346,5 +346,31 @@ namespace LabForPractice.Fiddling
             return result;
         }
 
+        static System.Random random = new System.Random();
+        public static int RandomNumber(int minN, int maxN, IEnumerable<int> exNumbers)
+        {
+            int result = exNumbers.First();
+            while (exNumbers.ToList().Contains(result))
+            {
+                if(exNumbers.ToList().Contains(result))
+                {
+                    Console.WriteLine("caught, num is " + result);
+                }
+                result = random.Next(minN, maxN + 1);
+            }
+            Console.WriteLine("result is " + result);
+            return result;
+        }
+        public static List<int> GetExcludeNum(int min, int max)
+        {
+            List<int> result = new List<int>(16);
+            for (int i = min + 1; i < max; i++)
+            {
+                result.Add(i);
+            }
+            return result;
+        }
+
+
     }
 }

@@ -493,12 +493,21 @@ namespace RegularExpression1
             //var tempString2 = LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile(tempPath);
             //LabForPractice.Fiddling.OthersWork.CSVReader.TempTest(tempString2);
 
+
+            // another setting up
+            
+            // var tempPath2 = "D:\\Lab\\Repo\\LabSamples\\LabForPractice_CSV_files\\Text_MercItemInfo.csv";
+            // var tempString3 = LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile(tempPath2);
+            // TestItemSetupForModding.StringSplitAndInsertToCollections(tempString3);
+            
             //
-            // LabForPractice.Fiddling.TestItemSetupForModding
-            var tempPath2 = "D:\\Lab\\Repo\\LabSamples\\LabForPractice_CSV_files\\Text_MercItemInfo.csv";
-            var tempString3 = LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile(tempPath2);
-            LabForPractice.Fiddling.TestItemSetupForModding.StringSplitAndInsertToCollections(tempString3);
-            // LabForPractice.Fiddling.TestItemSetupForModding.ReadDataWithEnum()
+            List<int> excludeNum = new List<int>() { 57, 58 };
+            var excludedNumbers = TestItemSetupForModding.GetExcludeNum(56, 59);
+            // var excludedNumbers = TestItemSetupForModding.GetExcludeNum(58, 59);
+            for (int i = 0; i < 15; i++)
+            {
+                // TestItemSetupForModding.RandomNumber(55, 61, excludeNum);
+            }
             #endregion
 
             #region reflection practice

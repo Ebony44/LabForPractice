@@ -1,0 +1,12 @@
+KEY,Demonic,Sacred,Elemental,Eternal,Magical,Feral
+Merchant_DiscountAppearChance_1_CharacterSelling_Female_EssenceReq,1_10,0,0,0,0,1_5
+Merchant_DiscountAppearChance_2_CharacterSelling_Female_EssenceReq,1_20,0,0,0,0,1_10
+Merchant_DiscountAppearChance_3_CharacterSelling_Female_EssenceReq,"1_40
+4_10",0,0,0,0,"1_20
+4_5"
+Merchant_DiscountAppearChance_4_CharacterSelling_Female_EssenceReq,"1_50
+4_20",0,0,0,0,"1_25
+4_10"
+Merchant_DiscountAppearChance_5_CharacterSelling_Female_EssenceReq,"1_100
+4_40",0,0,0,0,"1_50
+4_20"

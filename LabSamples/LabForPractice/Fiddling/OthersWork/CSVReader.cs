@@ -177,7 +177,13 @@ namespace LabForPractice.Fiddling.OthersWork
             }
             return readContents;
         }
+        public static string[] SplitStringWithSeparator(string paramString, string seperator)
+        {
+            Regex CsvParser = new Regex(seperator + "(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
+            var tempResultString = CsvParser.Split(paramString);
 
+            return tempResultString;
+        }
 
     }
 }

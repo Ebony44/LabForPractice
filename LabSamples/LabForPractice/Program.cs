@@ -344,28 +344,28 @@ namespace RegularExpression1
             #endregion
 
             #region lab 2101
-            Detonate_the_Maximum_Bombs_2101 lab2101 = new Detonate_the_Maximum_Bombs_2101();
-            // Detonate_the_Maximum_Bombs_2101.float2 a = new Detonate_the_Maximum_Bombs_2101.float2(5f,1f);
-            // Detonate_the_Maximum_Bombs_2101.float2 b = new Detonate_the_Maximum_Bombs_2101.float2(1f,1f);
-            // var tempDist = lab2101.Distance(a,b);
+            //Detonate_the_Maximum_Bombs_2101 lab2101 = new Detonate_the_Maximum_Bombs_2101();
+            //// Detonate_the_Maximum_Bombs_2101.float2 a = new Detonate_the_Maximum_Bombs_2101.float2(5f,1f);
+            //// Detonate_the_Maximum_Bombs_2101.float2 b = new Detonate_the_Maximum_Bombs_2101.float2(1f,1f);
+            //// var tempDist = lab2101.Distance(a,b);
 
 
-            // int[][] bombs = new int[][] { new int[]{ 2, 1, 3 }, new int[]{ 6, 1, 4 } };
-            int[][] bombs = new int[][] {
-                new int[] { 1, 2, 3 },
-                new int[] { 2, 3, 1 },
-                new int[] { 3, 4, 2 },
-                new int[] { 4, 5, 3 },
-                new int[] { 5, 6, 4 }
-            };
-            // Input: bombs = [[1,2,3],[2,3,1],[3,4,2],[4,5,3],[5,6,4]]
-            // int[][] bombs = new int[3][];
-            //for (int i = 0; i < bombs.Length; i++)
-            //{
-            //    bombs[i] = 
-            //}
+            //// int[][] bombs = new int[][] { new int[]{ 2, 1, 3 }, new int[]{ 6, 1, 4 } };
+            //int[][] bombs = new int[][] {
+            //    new int[] { 1, 2, 3 },
+            //    new int[] { 2, 3, 1 },
+            //    new int[] { 3, 4, 2 },
+            //    new int[] { 4, 5, 3 },
+            //    new int[] { 5, 6, 4 }
+            //};
+            //// Input: bombs = [[1,2,3],[2,3,1],[3,4,2],[4,5,3],[5,6,4]]
+            //// int[][] bombs = new int[3][];
+            ////for (int i = 0; i < bombs.Length; i++)
+            ////{
+            ////    bombs[i] = 
+            ////}
 
-            // lab2101.MaximumDetonation(bombs);
+            //// lab2101.MaximumDetonation(bombs);
 
             #endregion
 
@@ -413,9 +413,6 @@ namespace RegularExpression1
             //    };
             //var lab36Result = lab36.IsValidSudoku(tempCharArray);
             ////var tempChar = tempCharArray[7][1];
-            #endregion
-
-            #region 
             #endregion
 
             #region lab 12
@@ -471,8 +468,8 @@ namespace RegularExpression1
 
             #endregion
             #region two dimension array
-            LabForPractice.Fiddling.TwoDimensionalArray tempClass = new LabForPractice.Fiddling.TwoDimensionalArray();
-            tempClass.TestDeclareTwoDimensionalArray();
+            //LabForPractice.Fiddling.TwoDimensionalArray tempClass = new LabForPractice.Fiddling.TwoDimensionalArray();
+            //tempClass.TestDeclareTwoDimensionalArray();
             #endregion
 
             #region assmebly location and CSV file loading
@@ -495,34 +492,154 @@ namespace RegularExpression1
 
 
             // another setting up
-            
+
             // var tempPath2 = "D:\\Lab\\Repo\\LabSamples\\LabForPractice_CSV_files\\Text_MercItemInfo.csv";
             // var tempString3 = LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile(tempPath2);
             // TestItemSetupForModding.StringSplitAndInsertToCollections(tempString3);
-            
-            //
-            List<int> excludeNum = new List<int>() { 57, 58 };
-            var excludedNumbers = TestItemSetupForModding.GetExcludeNum(56, 59);
-            // var excludedNumbers = TestItemSetupForModding.GetExcludeNum(58, 59);
-            for (int i = 0; i < 15; i++)
-            {
-                // TestItemSetupForModding.RandomNumber(55, 61, excludeNum);
-            }
+
+
+            #endregion
+            #region random and excluding
+            ////
+            //List<int> excludeNum = new List<int>() { 57, 58 };
+            //var excludedNumbers = TestItemSetupForModding.GetExcludeNum(56, 59);
+            //// var excludedNumbers = TestItemSetupForModding.GetExcludeNum(58, 59);
+            //for (int i = 0; i < 15; i++)
+            //{
+            //    // TestItemSetupForModding.RandomNumber(55, 61, excludeNum);
+            //}
             #endregion
 
             #region reflection practice
-            ReflectionPracticeClass tempPracClass = new ReflectionPracticeClass(1,2);
-            Type setType = typeof(ReflectionPracticeClass);
-            Type setBaseType = typeof(ReflectionPracticeClass).BaseType;
-            FieldInfo myField = setType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
-            FieldInfo myBaseField = setBaseType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
-            // var tempInt =  (int)myField.GetValue(tempPracClass);
-            var tempInt = (int)myBaseField.GetValue(tempPracClass);
+            //ReflectionPracticeClass tempPracClass = new ReflectionPracticeClass(1,2);
+            //Type setType = typeof(ReflectionPracticeClass);
+            //Type setBaseType = typeof(ReflectionPracticeClass).BaseType;
+            //FieldInfo myField = setType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
+            //FieldInfo myBaseField = setBaseType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
+            //// var tempInt =  (int)myField.GetValue(tempPracClass);
+            //var tempInt = (int)myBaseField.GetValue(tempPracClass);
+            #endregion
+
+            #region string format
+            //string tempString = string.Empty;
+            //int tempInt = 23;
+            //int a = 1;
+            //int b = 2;
+            //Console.WriteLine($"string example1 : {a} + {b} = {a + b}");
+
+            //string charType = "asdf";
+            //string essenceType = "fdsa";
+            //string essenceLevel = "qwer";
+            //string currentCount = "asdf";
+            //string maxCount = "zxcv";
+            //var originCharText = 
+            //    $" \" Required {@charType}: Essence condtion {@essenceType} {@essenceLevel}+, \"  {@currentCount} / {@maxCount}";
+            //// var tempText = (originCharText, charType);
+            //Console.WriteLine("ripped from mod "+ originCharText);
+            //var originCharText_2 = "{0},{1}";
+
+            //Console.WriteLine(string.Format(originCharText_2, 1, 2));
+
+            // C:\\gitrepo\\Labs\\LabSamples\\LabForPractice_CSV_files
+            //var tempPath = "D:\\Lab\\Repo\\LabSamples\\LabForPractice_CSV_files\\TempTestCSV.csv";
+            var tempPath = "C:\\gitrepo\\Labs\\LabSamples\\LabForPractice_CSV_files\\Text_UpgradeReqnfo.csv";
+            var tempString2 = LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile(tempPath);
+            var tempString3 = LabForPractice.Fiddling.OthersWork.CSVReader.SplitStringWithSeparator(tempString2, "\r\n");
+
+            var tempString4 = LabForPractice.Fiddling.OthersWork.CSVReader.SplitStringWithSeparator(tempString3[3], ",");
+            var tempString5 = tempString4[1];
+            var tempString6 = tempString5.Replace("\"", string.Empty);
+            var tempString7 = LabForPractice.Fiddling.OthersWork.CSVReader.SplitStringWithSeparator(tempString6, "\n");
+
+
+
+            #endregion
+            #region struct dealloc show
+            // TempMainStruct tempStr = GetStruct();
+            // Dictionary<TempMainStruct, int> tempStructDic = new Dictionary<TempMainStruct, int>(4);
+            // // ScopeTestingFunc(tempStr, ref tempStructDic);
+            // ScopeTestingFunc(GetStruct(), ref tempStructDic);
+
+            //////
+
+            //Struct_A a = new Struct_A();
+            //a.Foobar = "hi";
+            //Class_B b = new Class_B();
+            //b.Foobar = "hi";
+
+            //List<Struct_A> tempList = new List<Struct_A>();
+
+            //tempList.Add(a);
+
+            //StructTest(a);
+            //ClassTest(b);
+
+            //StructTest(tempList[0]);
+
             #endregion
 
         } // bracket of main
 
+        #region
+        public struct TempMainStruct
+        {
+            public int currentCount;
+        }
+        public static TempMainStruct GetStruct()
+        {
+            TempMainStruct result = default;// = new TempMainStruct();
+            return result;
+        }
+        
+        public static void ScopeTestingFunc(TempMainStruct paramStruct, ref Dictionary<TempMainStruct, int> paramDic)
+        {
+            paramStruct.currentCount++;
+            if (paramDic.ContainsKey(paramStruct))
+            {
+                paramDic[paramStruct]++;
+                
+                //
+            }
+            else
+            {
+                paramDic.Add(paramStruct, 1);
+            }
+        }
 
+        struct Struct_A
+        {
+            public string Foobar { get; set; }
+        }
+
+        class Class_B
+        {
+            public string Foobar { get; set; }
+        }
+
+        static void StructTest(Struct_A a)
+        {
+            a.Foobar = "hello";
+        }
+        static void AnotherStructTest(ref List<Struct_A> list)
+        {
+            //for (int i = 0; i < list.Count; i++)
+            //{
+            //    list[i].Foobar = "hello";
+            //}
+
+            foreach (var item in list)
+            {
+                // item.Foobar = "hello"; // CS1654  
+            }
+            //a.Foobar = "hello";
+        }
+
+        static void ClassTest(Class_B b)
+        {
+            b.Foobar = "hello";
+        }
+
+        #endregion
         class DataflowProducerConsumer
         {
             static void Produce(ITargetBlock<byte[]> target)

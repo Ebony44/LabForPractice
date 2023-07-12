@@ -8,3 +8,13 @@ D:\Lab\Repo\LabSamples\LabForPractice\obj\Debug\LabForPractice.pdb
 D:\Lab\Repo\LabSamples\LabForPractice\bin\Debug\System.Threading.Tasks.Dataflow.dll
 D:\Lab\Repo\LabSamples\LabForPractice\bin\Debug\System.Threading.Tasks.Dataflow.xml
 D:\Lab\Repo\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.CopyComplete
+C:\gitrepo\Labs\LabSamples\LabForPractice\bin\Debug\LabForPractice.exe.config
+C:\gitrepo\Labs\LabSamples\LabForPractice\bin\Debug\LabForPractice.exe
+C:\gitrepo\Labs\LabSamples\LabForPractice\bin\Debug\LabForPractice.pdb
+C:\gitrepo\Labs\LabSamples\LabForPractice\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\gitrepo\Labs\LabSamples\LabForPractice\bin\Debug\System.Threading.Tasks.Dataflow.xml
+C:\gitrepo\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.AssemblyReference.cache
+C:\gitrepo\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.CoreCompileInputs.cache
+C:\gitrepo\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.CopyComplete
+C:\gitrepo\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.exe
+C:\gitrepo\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.pdb

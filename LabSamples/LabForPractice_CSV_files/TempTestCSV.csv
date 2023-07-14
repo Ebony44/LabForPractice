@@ -1,4 +1,6 @@
 KEY,Korean,English,Thailand,Mynamar
 T_LOGIN,로그??Log in,a,c,
-T_LOGOUT,로그?�웃,Log out,b,d
+T_LOGOUT,로그?�웃,Log out,b,d
 T_TempTest,asdf,qwer,rrrr,tttt
+
+DiscountAppearChance_Tooltip_Desc,	"필요 {0}: Essence condtion {1} {2}+,  {3} / {4}",	" Required {0}: Essence condtion {1} {2}+,  {3} / {4}"

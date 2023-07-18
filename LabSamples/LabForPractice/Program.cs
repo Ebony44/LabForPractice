@@ -12,6 +12,7 @@ using LabForPractice.LabForNumericOrder;
 using LabForPractice.GfGReferences;
 using LabForPractice.Fiddling;
 using System.Reflection;
+using System.Xml;
 
 namespace RegularExpression1
 {
@@ -576,7 +577,35 @@ namespace RegularExpression1
 
             #endregion
 
+            #region xml loading and reading
+            XmlNamespaceManager nsMgr;
+            XmlDocument tempDocument = new XmlDocument();
+            
+
+            XmlNode GettingNode;
+            
+            
+            var tempXmlPath= "D:\\Lab\\Repo\\LabSamples\\LabForPractice_XML_files\\AndroidManifest.xml";
+            tempDocument.Load(tempXmlPath);
+            XmlElement root = tempDocument.DocumentElement;
+            //using (var reader = new XmlTextReader(tempXmlPath))
+            //{
+            //    reader.Read();
+            //    tempDocument.Load(reader);
+            //}
+            nsMgr = new XmlNamespaceManager(tempDocument.NameTable);
+            string AndroidXmlNamespace = "https://schemas.android.com/apk/res/android";
+            nsMgr.AddNamespace("android", AndroidXmlNamespace);
+            // nsMgr.AddNamespace("android", AndroidXmlNamespace);
+            nsMgr.AddNamespace("bk", "urn:samples");
+            var tempNode = root.SelectSingleNode("descendant::action[@android:name='android.intent.action.MAIN']", nsMgr);
+            XmlNode book;
+            book = root.SelectSingleNode("descendant::book[@bk:ISBN='1-861001-57-6']", nsMgr);
+            #endregion
+
+
         } // bracket of main
+
 
         #region
         public struct TempMainStruct

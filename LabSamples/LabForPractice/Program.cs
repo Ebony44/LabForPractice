@@ -578,33 +578,68 @@ namespace RegularExpression1
             #endregion
 
             #region xml loading and reading
-            XmlNamespaceManager nsMgr;
-            XmlDocument tempDocument = new XmlDocument();
-            
+            //XmlNamespaceManager nsMgr;
+            //XmlDocument tempDocument = new XmlDocument();
 
-            XmlNode GettingNode;
-            
-            
-            var tempXmlPath= "D:\\Lab\\Repo\\LabSamples\\LabForPractice_XML_files\\AndroidManifest.xml";
-            tempDocument.Load(tempXmlPath);
-            XmlElement root = tempDocument.DocumentElement;
-            //using (var reader = new XmlTextReader(tempXmlPath))
-            //{
-            //    reader.Read();
-            //    tempDocument.Load(reader);
-            //}
-            nsMgr = new XmlNamespaceManager(tempDocument.NameTable);
-            string AndroidXmlNamespace = "https://schemas.android.com/apk/res/android";
-            nsMgr.AddNamespace("android", AndroidXmlNamespace);
-            // nsMgr.AddNamespace("android", AndroidXmlNamespace);
-            nsMgr.AddNamespace("bk", "urn:samples");
-            var tempNode = root.SelectSingleNode("descendant::action[@android:name='android.intent.action.MAIN']", nsMgr);
-            XmlNode book;
-            book = root.SelectSingleNode("descendant::book[@bk:ISBN='1-861001-57-6']", nsMgr);
+
+            //XmlNode GettingNode;
+
+            //var tempXmlPath= "D:\\Lab\\Repo\\LabSamples\\LabForPractice_XML_files\\AndroidManifest.xml";
+            //tempDocument.Load(tempXmlPath);
+            //XmlElement root = tempDocument.DocumentElement;
+            ////using (var reader = new XmlTextReader(tempXmlPath))
+            ////{
+            ////    reader.Read();
+            ////    tempDocument.Load(reader);
+            ////}
+            //nsMgr = new XmlNamespaceManager(tempDocument.NameTable);
+            //string AndroidXmlNamespace = "https://schemas.android.com/apk/res/android";
+            //nsMgr.AddNamespace("android", AndroidXmlNamespace);
+            //// nsMgr.AddNamespace("android", AndroidXmlNamespace);
+            //nsMgr.AddNamespace("bk", "urn:samples");
+            //var tempNode = root.SelectSingleNode("descendant::action[@android:name='android.intent.action.MAIN']", nsMgr);
+            //XmlNode book;
+            //book = root.SelectSingleNode("descendant::book[@bk:ISBN='1-861001-57-6']", nsMgr);
+            #endregion
+
+            #region some math
+
+            Vector2 firstPoint = new Vector2(1, 5);
+            Vector2 secondPoint = new Vector2(3, 15);
+            GetPerpendicularLine(firstPoint, secondPoint);
             #endregion
 
 
         } // bracket of main
+
+        public static void GetPerpendicularLine(Vector2 lineStartPoint, Vector2 lineEndPoint)
+        {
+            // line 1 = y = mx+n
+            // line 2(this function's return value)
+
+            // 1. get m(slope)
+            var modValueY = lineEndPoint.y - lineStartPoint.y;
+            var modValueX = lineEndPoint.x - lineStartPoint.x;
+            var firstLineSlope = modValueY / modValueX;
+            var secondLineSlope = -(1 / firstLineSlope);
+
+            Vector2 secondLineFirstPoint = new Vector2(lineStartPoint.x, lineStartPoint.x * secondLineSlope);
+            Vector2 secondLineSecondPoint = new Vector2(lineEndPoint.x, lineEndPoint.x * secondLineSlope);
+
+        }
+
+        public class Vector2
+        {
+            public float x = 0;
+            public float y = 0;
+
+            public Vector2(float x, float y)
+            {
+                this.x = x;
+                this.y = y;
+            }
+        }
+
 
 
         #region

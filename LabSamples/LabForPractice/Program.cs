@@ -13,6 +13,7 @@ using LabForPractice.GfGReferences;
 using LabForPractice.Fiddling;
 using System.Reflection;
 using System.Xml;
+using System.IO;
 
 namespace RegularExpression1
 {
@@ -541,16 +542,17 @@ namespace RegularExpression1
 
             //Console.WriteLine(string.Format(originCharText_2, 1, 2));
 
-            // C:\\gitrepo\\Labs\\LabSamples\\LabForPractice_CSV_files
-            var tempPath = "D:\\Lab\\Repo\\LabSamples\\LabForPractice_CSV_files\\TempTestCSV.csv";
-            // var tempPath = "C:\\gitrepo\\Labs\\LabSamples\\LabForPractice_CSV_files\\Text_UpgradeReqnfo.csv";
-            var tempString2 = LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile(tempPath);
-            var tempString3 = LabForPractice.Fiddling.OthersWork.CSVReader.SplitStringWithSeparator(tempString2, "\r\n");
+            //// C:\\gitrepo\\Labs\\LabSamples\\LabForPractice_CSV_files
+            // var tempPath = "D:\\Lab\\Repo\\LabSamples\\LabForPractice_CSV_files\\TempTestCSV.csv";
+            //// var tempPath = "C:\\gitrepo\\Labs\\LabSamples\\LabForPractice_CSV_files\\Text_UpgradeReqnfo.csv";
+            //var tempString2 = LabForPractice.Fiddling.OthersWork.CSVReader.GetStringFromFile(tempPath);
+            //var tempString3 = LabForPractice.Fiddling.OthersWork.CSVReader.SplitStringWithSeparator(tempString2, "\r\n");
 
-            var tempString4 = LabForPractice.Fiddling.OthersWork.CSVReader.SplitStringWithSeparator(tempString3[5], ",");
-            //var tempString5 = tempString4[1];
-            //var tempString6 = tempString5.Replace("\"", string.Empty);
-            //var tempString7 = LabForPractice.Fiddling.OthersWork.CSVReader.SplitStringWithSeparator(tempString6, "\n");
+            //var tempString4 = LabForPractice.Fiddling.OthersWork.CSVReader.SplitStringWithSeparator(tempString3[5], ",");
+
+            ////var tempString5 = tempString4[1];
+            ////var tempString6 = tempString5.Replace("\"", string.Empty);
+            ////var tempString7 = LabForPractice.Fiddling.OthersWork.CSVReader.SplitStringWithSeparator(tempString6, "\n");
 
             #endregion
             #region struct dealloc show
@@ -607,6 +609,30 @@ namespace RegularExpression1
             Vector2 firstPoint = new Vector2(1, 5);
             Vector2 secondPoint = new Vector2(3, 15);
             GetPerpendicularLine(firstPoint, secondPoint);
+            #endregion
+
+
+            #region serialize class as file... and modify class later and load it..
+            // saving
+            var tempPath = "D:\\Lab\\Repo\\LabSamples\\LabForPractice_BIN_files\\"; // directory
+            tempPath += "ClassSerializePractice";
+
+            //bool append = false;
+            //ClassSerializePractice objectToWrite = new ClassSerializePractice();
+            //objectToWrite.randomCount_1 = 24;
+            //using (Stream stream = File.Open(tempPath, append ? FileMode.Append : FileMode.Create))
+            //{
+            //    var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            //    binaryFormatter.Serialize(stream, objectToWrite);
+            //}
+
+            //loading
+            using (Stream stream = File.Open(tempPath, FileMode.Open))
+            {
+                var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+                var currentValue = (ClassSerializePractice)binaryFormatter.Deserialize(stream);
+            }
+            // no error when saved file has no variable which added newly
             #endregion
 
 

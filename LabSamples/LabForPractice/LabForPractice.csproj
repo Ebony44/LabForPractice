@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalcClockAngle_Ex.cs" />
+    <Compile Include="Fiddling\ClassSerializePractice.cs" />
     <Compile Include="Fiddling\FiddlingClass.cs" />
     <Compile Include="Fiddling\FTPUpload.cs" />
     <Compile Include="Fiddling\OthersWork\CSVReader.cs" />

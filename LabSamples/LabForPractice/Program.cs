@@ -513,13 +513,28 @@ namespace RegularExpression1
             #endregion
 
             #region reflection practice
-            //ReflectionPracticeClass tempPracClass = new ReflectionPracticeClass(1,2);
-            //Type setType = typeof(ReflectionPracticeClass);
-            //Type setBaseType = typeof(ReflectionPracticeClass).BaseType;
-            //FieldInfo myField = setType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
-            //FieldInfo myBaseField = setBaseType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
-            //// var tempInt =  (int)myField.GetValue(tempPracClass);
-            //var tempInt = (int)myBaseField.GetValue(tempPracClass);
+            ReflectionPracticeClass tempPracClass = new ReflectionPracticeClass(1, 2);
+            
+            Type setType = typeof(ReflectionPracticeClass);
+            Type setBaseType = typeof(ReflectionPracticeClass).BaseType;
+            FieldInfo myField = setType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo myBaseField = setBaseType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
+            // var tempInt =  (int)myField.GetValue(tempPracClass);
+            var tempInt = (int)myBaseField.GetValue(tempPracClass);
+
+            Type tempCurrentType = typeof(List<int>);
+            FieldInfo tempCurrentField = setType.GetField(
+                "tempReadOnlyList",
+            BindingFlags.NonPublic | BindingFlags.Instance
+                );
+
+            // tempPracClass.tempReadOnlyList = new List<int>();
+            tempPracClass.tempReadOnlyList.Add(2);
+
+            var currentField = GetReflectField<List<int>, ReflectionPracticeClass>(tempPracClass, "tempReadOnlyList");
+
+            Console.WriteLine("");
+
             #endregion
 
             #region string format
@@ -606,33 +621,44 @@ namespace RegularExpression1
 
             #region some math
 
-            Vector2 firstPoint = new Vector2(1, 5);
-            Vector2 secondPoint = new Vector2(3, 15);
-            GetPerpendicularLine(firstPoint, secondPoint);
+            //Vector2 firstPoint = new Vector2(1, 5);
+            //Vector2 secondPoint = new Vector2(3, 15);
+            //GetPerpendicularLine(firstPoint, secondPoint);
             #endregion
 
 
             #region serialize class as file... and modify class later and load it..
             // saving
-            var tempPath = "D:\\Lab\\Repo\\LabSamples\\LabForPractice_BIN_files\\"; // directory
-            tempPath += "ClassSerializePractice";
+            //var tempPath = "D:\\Lab\\Repo\\LabSamples\\LabForPractice_BIN_files\\"; // directory
+            //tempPath += "ClassSerializePractice";
 
-            //bool append = false;
-            //ClassSerializePractice objectToWrite = new ClassSerializePractice();
-            //objectToWrite.randomCount_1 = 24;
-            //using (Stream stream = File.Open(tempPath, append ? FileMode.Append : FileMode.Create))
+            ////bool append = false;
+            ////ClassSerializePractice objectToWrite = new ClassSerializePractice();
+            ////objectToWrite.randomCount_1 = 24;
+            ////using (Stream stream = File.Open(tempPath, append ? FileMode.Append : FileMode.Create))
+            ////{
+            ////    var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+            ////    binaryFormatter.Serialize(stream, objectToWrite);
+            ////}
+
+            ////loading
+            //using (Stream stream = File.Open(tempPath, FileMode.Open))
             //{
             //    var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-            //    binaryFormatter.Serialize(stream, objectToWrite);
+            //    var currentValue = (ClassSerializePractice)binaryFormatter.Deserialize(stream);
             //}
-
-            //loading
-            using (Stream stream = File.Open(tempPath, FileMode.Open))
-            {
-                var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                var currentValue = (ClassSerializePractice)binaryFormatter.Deserialize(stream);
-            }
             // no error when saved file has no variable which added newly
+            #endregion
+
+            #region regex for number only taking
+            bool bResult = false;
+            var regex = new Regex("^[0-9]+$");
+            // var input = "asdf";
+            var input = "4f32f1";
+            if (regex.IsMatch(input))
+            {
+                bResult = true;
+            }
             #endregion
 
 
@@ -832,5 +858,37 @@ namespace RegularExpression1
 
             return "";
         }
+
+        #region reflect field related
+
+        public static void SetReflectField<TsetValue, Tinstancetype>(Tinstancetype instance, string fieldName, TsetValue setValue)
+        {
+
+            #region reflection variable
+            Type setType = typeof(Tinstancetype);
+            FieldInfo myField = setType.GetField(
+                fieldName,
+            BindingFlags.NonPublic | BindingFlags.Instance
+                );
+            // int assigningUnitID = (int)myField.GetValue(instance) + 1; // get playdata's unit id
+            myField.SetValue(instance, setValue); // set playdata's unit id
+
+            #endregion
+        }
+
+        public static TgetValue GetReflectField<TgetValue, Tinstancetype>(Tinstancetype instance, string fieldName)
+        {
+            Type setType = typeof(Tinstancetype);
+            FieldInfo myField = setType.GetField(
+                fieldName,
+            BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public
+                );
+            // int assigningUnitID = (int)myField.GetValue(instance) + 1; // get playdata's unit id
+            // myField.SetValue(instance, setValue); // set playdata's unit id
+            return (TgetValue)myField.GetValue(instance);
+        }
+
+        #endregion
+
     }
 }

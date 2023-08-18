@@ -9,6 +9,7 @@ namespace LabForPractice.Fiddling
     public class ReflectionPracticeClass : ReflectionBaseClass
     {
         private int childInt;
+        public readonly List<int> tempReadOnlyList = new List<int>();
 
         public ReflectionPracticeClass()
         {
@@ -20,6 +21,8 @@ namespace LabForPractice.Fiddling
             childInt = paramChild;
             base.baseIntProp = paramBase;
         }
+
+        
 
     }
 
@@ -37,6 +40,8 @@ namespace LabForPractice.Fiddling
             }
         }
         private int baseInt;
+
+        public readonly List<int> tempBaseReadOnlyList = new List<int>();
 
     }
 }

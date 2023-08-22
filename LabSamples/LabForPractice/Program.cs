@@ -513,27 +513,27 @@ namespace RegularExpression1
             #endregion
 
             #region reflection practice
-            ReflectionPracticeClass tempPracClass = new ReflectionPracticeClass(1, 2);
+            //ReflectionPracticeClass tempPracClass = new ReflectionPracticeClass(1, 2);
             
-            Type setType = typeof(ReflectionPracticeClass);
-            Type setBaseType = typeof(ReflectionPracticeClass).BaseType;
-            FieldInfo myField = setType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
-            FieldInfo myBaseField = setBaseType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
-            // var tempInt =  (int)myField.GetValue(tempPracClass);
-            var tempInt = (int)myBaseField.GetValue(tempPracClass);
+            //Type setType = typeof(ReflectionPracticeClass);
+            //Type setBaseType = typeof(ReflectionPracticeClass).BaseType;
+            //FieldInfo myField = setType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
+            //FieldInfo myBaseField = setBaseType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
+            //// var tempInt =  (int)myField.GetValue(tempPracClass);
+            //var tempInt = (int)myBaseField.GetValue(tempPracClass);
 
-            Type tempCurrentType = typeof(List<int>);
-            FieldInfo tempCurrentField = setType.GetField(
-                "tempReadOnlyList",
-            BindingFlags.NonPublic | BindingFlags.Instance
-                );
+            //Type tempCurrentType = typeof(List<int>);
+            //FieldInfo tempCurrentField = setType.GetField(
+            //    "tempReadOnlyList",
+            //BindingFlags.NonPublic | BindingFlags.Instance
+            //    );
 
-            // tempPracClass.tempReadOnlyList = new List<int>();
-            tempPracClass.tempReadOnlyList.Add(2);
+            //// tempPracClass.tempReadOnlyList = new List<int>();
+            //tempPracClass.tempReadOnlyList.Add(2);
 
-            var currentField = GetReflectField<List<int>, ReflectionPracticeClass>(tempPracClass, "tempReadOnlyList");
+            //var currentField = GetReflectField<List<int>, ReflectionPracticeClass>(tempPracClass, "tempReadOnlyList");
 
-            Console.WriteLine("");
+            //Console.WriteLine("");
 
             #endregion
 
@@ -661,6 +661,17 @@ namespace RegularExpression1
             }
             #endregion
 
+            #region multiple build config
+
+#if Debug
+Console.WriteLine("current config is Debug");
+#elif Release
+Console.WriteLine("current config is Release");
+#endif
+
+
+            #endregion
+
 
         } // bracket of main
 
@@ -694,7 +705,7 @@ namespace RegularExpression1
 
 
 
-        #region
+#region
         public struct TempMainStruct
         {
             public int currentCount;
@@ -753,7 +764,7 @@ namespace RegularExpression1
             b.Foobar = "hello";
         }
 
-        #endregion
+#endregion
         class DataflowProducerConsumer
         {
             static void Produce(ITargetBlock<byte[]> target)
@@ -859,12 +870,12 @@ namespace RegularExpression1
             return "";
         }
 
-        #region reflect field related
+#region reflect field related
 
         public static void SetReflectField<TsetValue, Tinstancetype>(Tinstancetype instance, string fieldName, TsetValue setValue)
         {
 
-            #region reflection variable
+#region reflection variable
             Type setType = typeof(Tinstancetype);
             FieldInfo myField = setType.GetField(
                 fieldName,
@@ -873,7 +884,7 @@ namespace RegularExpression1
             // int assigningUnitID = (int)myField.GetValue(instance) + 1; // get playdata's unit id
             myField.SetValue(instance, setValue); // set playdata's unit id
 
-            #endregion
+#endregion
         }
 
         public static TgetValue GetReflectField<TgetValue, Tinstancetype>(Tinstancetype instance, string fieldName)
@@ -888,7 +899,7 @@ namespace RegularExpression1
             return (TgetValue)myField.GetValue(instance);
         }
 
-        #endregion
+#endregion
 
     }
 }

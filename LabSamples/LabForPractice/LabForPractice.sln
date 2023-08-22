@@ -8,11 +8,17 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Localization_Eng|Any CPU = Localization_Eng|Any CPU
+		Localization_Kor|Any CPU = Localization_Kor|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0EEEC017-4CB7-4D2A-92B4-A7A500AD7F0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0EEEC017-4CB7-4D2A-92B4-A7A500AD7F0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EEEC017-4CB7-4D2A-92B4-A7A500AD7F0A}.Localization_Eng|Any CPU.ActiveCfg = Localization_Eng|Any CPU
+		{0EEEC017-4CB7-4D2A-92B4-A7A500AD7F0A}.Localization_Eng|Any CPU.Build.0 = Localization_Eng|Any CPU
+		{0EEEC017-4CB7-4D2A-92B4-A7A500AD7F0A}.Localization_Kor|Any CPU.ActiveCfg = Localization_Kor|Any CPU
+		{0EEEC017-4CB7-4D2A-92B4-A7A500AD7F0A}.Localization_Kor|Any CPU.Build.0 = Localization_Kor|Any CPU
 		{0EEEC017-4CB7-4D2A-92B4-A7A500AD7F0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EEEC017-4CB7-4D2A-92B4-A7A500AD7F0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

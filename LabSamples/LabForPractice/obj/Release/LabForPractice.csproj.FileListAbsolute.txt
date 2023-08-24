@@ -1,0 +1,10 @@
+D:\Lab\Repo\LabSamples\LabForPractice\bin\Release\LabForPractice.exe.config
+D:\Lab\Repo\LabSamples\LabForPractice\bin\Release\LabForPractice.exe
+D:\Lab\Repo\LabSamples\LabForPractice\bin\Release\LabForPractice.pdb
+D:\Lab\Repo\LabSamples\LabForPractice\bin\Release\System.Threading.Tasks.Dataflow.dll
+D:\Lab\Repo\LabSamples\LabForPractice\bin\Release\System.Threading.Tasks.Dataflow.xml
+D:\Lab\Repo\LabSamples\LabForPractice\obj\Release\LabForPractice.csproj.AssemblyReference.cache
+D:\Lab\Repo\LabSamples\LabForPractice\obj\Release\LabForPractice.csproj.CoreCompileInputs.cache
+D:\Lab\Repo\LabSamples\LabForPractice\obj\Release\LabForPractice.csproj.CopyComplete
+D:\Lab\Repo\LabSamples\LabForPractice\obj\Release\LabForPractice.exe
+D:\Lab\Repo\LabSamples\LabForPractice\obj\Release\LabForPractice.pdb

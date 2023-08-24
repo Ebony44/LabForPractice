@@ -14,6 +14,7 @@ using LabForPractice.Fiddling;
 using System.Reflection;
 using System.Xml;
 using System.IO;
+using LabForPractice.Fiddling.OthersWork;
 
 namespace RegularExpression1
 {
@@ -651,25 +652,71 @@ namespace RegularExpression1
             #endregion
 
             #region regex for number only taking
-            bool bResult = false;
-            var regex = new Regex("^[0-9]+$");
-            // var input = "asdf";
-            var input = "4f32f1";
-            if (regex.IsMatch(input))
-            {
-                bResult = true;
-            }
+            //bool bResult = false;
+            //var regex = new Regex("^[0-9]+$");
+            //// var input = "asdf";
+            //var input = "4f32f1";
+            //if (regex.IsMatch(input))
+            //{
+            //    bResult = true;
+            //}
             #endregion
 
             #region multiple build config
 
-#if Debug
-Console.WriteLine("current config is Debug");
-#elif Release
-Console.WriteLine("current config is Release");
-#endif
+//#if Debug
+//Console.WriteLine("current config is Debug");
+//#elif Release
+//Console.WriteLine("current config is Release");
+//#endif
+            #endregion
+
+            #region GUID generate and save into file
+            Guid id = Guid.NewGuid();
+            var guidString = id.ToString();
+            var currentGuidText = string.Empty;
+            StringBuilder tempSB = new StringBuilder();
+            tempSB.Append(guidString);
+            tempSB.Append("\n");
 
 
+            id = Guid.NewGuid();
+            var guidString_2 = id.ToString();
+            tempSB.Append(guidString_2);
+            tempSB.Append("\n");
+
+            id = Guid.NewGuid();
+            var guidString_3 = id.ToString();
+            tempSB.Append(guidString_3);
+            tempSB.Append("\n");
+
+
+
+            var folderPath = Assembly.GetExecutingAssembly().Location;
+            // folderPath = folderPath.Remove(folderPath.Length - 4, 4);
+            var fileName = "TempTestText.txt";
+            string dir = Path.GetDirectoryName(folderPath);
+            // string root = Directory.GetCurrentDirectory();
+            folderPath = dir + "\\";
+            var fullFilePath = folderPath + fileName;
+
+            currentGuidText = tempSB.ToString();
+
+            File.WriteAllText(fullFilePath, currentGuidText);
+
+            // 		folderPath	"D:\\Lab\\Repo\\LabSamples\\LabForPractice\\bin\\Debug\\LabForPractice"	string
+
+            var tempReadText = File.ReadAllText(fullFilePath);
+            var splitTexts = CSVReader.SplitStringWithSeparator(tempReadText, "\n");
+
+            bool bCheckGuid = false;
+            foreach (var item in splitTexts)
+            {
+                if(guidString.Equals(item))
+                {
+                    Console.WriteLine("same guid in file");
+                }
+            }
             #endregion
 
 

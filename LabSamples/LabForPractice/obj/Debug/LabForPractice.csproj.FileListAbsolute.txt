@@ -18,3 +18,13 @@ C:\gitrepo\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.CoreCo
 C:\gitrepo\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.CopyComplete
 C:\gitrepo\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.exe
 C:\gitrepo\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.pdb
+C:\Labs\LabSamples\LabForPractice\bin\Debug\LabForPractice.exe.config
+C:\Labs\LabSamples\LabForPractice\bin\Debug\LabForPractice.exe
+C:\Labs\LabSamples\LabForPractice\bin\Debug\LabForPractice.pdb
+C:\Labs\LabSamples\LabForPractice\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\Labs\LabSamples\LabForPractice\bin\Debug\System.Threading.Tasks.Dataflow.xml
+C:\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.AssemblyReference.cache
+C:\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.CoreCompileInputs.cache
+C:\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.csproj.CopyComplete
+C:\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.exe
+C:\Labs\LabSamples\LabForPractice\obj\Debug\LabForPractice.pdb

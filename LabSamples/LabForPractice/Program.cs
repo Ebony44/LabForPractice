@@ -709,6 +709,10 @@ namespace RegularExpression1
             var tempReadText = File.ReadAllText(fullFilePath);
             var splitTexts = CSVReader.SplitStringWithSeparator(tempReadText, "\n");
 
+            var splitTextList = splitTexts.ToList();
+
+            bool bCheckGUIDList = splitTextList.Contains(guidString);
+
             bool bCheckGuid = false;
             foreach (var item in splitTexts)
             {

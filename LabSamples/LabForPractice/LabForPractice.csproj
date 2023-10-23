@@ -78,6 +78,7 @@
     <Compile Include="GfGReferences\CombinationUtil.cs" />
     <Compile Include="GfGReferences\printEgyptianFraction.cs" />
     <Compile Include="GfGReferences\TreeTraversal.cs" />
+    <Compile Include="HelperClass.cs" />
     <Compile Include="LabForNumericOrder\AddTwoNumbers_2.cs" />
     <Compile Include="Lab2_BoatsToSavePeople.cs" />
     <Compile Include="LabForNumericOrder\Balanced_Binary_Tree_110.cs" />

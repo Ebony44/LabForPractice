@@ -15,6 +15,7 @@ using System.Reflection;
 using System.Xml;
 using System.IO;
 using LabForPractice.Fiddling.OthersWork;
+using System.Collections;
 
 namespace RegularExpression1
 {
@@ -515,7 +516,7 @@ namespace RegularExpression1
 
             #region reflection practice
             //ReflectionPracticeClass tempPracClass = new ReflectionPracticeClass(1, 2);
-            
+
             //Type setType = typeof(ReflectionPracticeClass);
             //Type setBaseType = typeof(ReflectionPracticeClass).BaseType;
             //FieldInfo myField = setType.GetField("baseInt", BindingFlags.NonPublic | BindingFlags.Instance);
@@ -664,67 +665,189 @@ namespace RegularExpression1
 
             #region multiple build config
 
-//#if Debug
-//Console.WriteLine("current config is Debug");
-//#elif Release
-//Console.WriteLine("current config is Release");
-//#endif
+            //#if Debug
+            //Console.WriteLine("current config is Debug");
+            //#elif Release
+            //Console.WriteLine("current config is Release");
+            //#endif
             #endregion
 
             #region GUID generate and save into file
-            Guid id = Guid.NewGuid();
-            var guidString = id.ToString();
-            var currentGuidText = string.Empty;
-            StringBuilder tempSB = new StringBuilder();
-            tempSB.Append(guidString);
-            tempSB.Append("\n");
+            //Guid id = Guid.NewGuid();
+            //var guidString = id.ToString();
+            //var currentGuidText = string.Empty;
+            //StringBuilder tempSB = new StringBuilder();
+            //tempSB.Append(guidString);
+            //tempSB.Append("\n");
 
 
-            id = Guid.NewGuid();
-            var guidString_2 = id.ToString();
-            tempSB.Append(guidString_2);
-            tempSB.Append("\n");
+            //id = Guid.NewGuid();
+            //var guidString_2 = id.ToString();
+            //tempSB.Append(guidString_2);
+            //tempSB.Append("\n");
 
-            id = Guid.NewGuid();
-            var guidString_3 = id.ToString();
-            tempSB.Append(guidString_3);
-            tempSB.Append("\n");
+            //id = Guid.NewGuid();
+            //var guidString_3 = id.ToString();
+            //tempSB.Append(guidString_3);
+            //tempSB.Append("\n");
 
 
 
-            var folderPath = Assembly.GetExecutingAssembly().Location;
-            // folderPath = folderPath.Remove(folderPath.Length - 4, 4);
-            var fileName = "TempTestText.txt";
-            string dir = Path.GetDirectoryName(folderPath);
-            // string root = Directory.GetCurrentDirectory();
-            folderPath = dir + "\\";
-            var fullFilePath = folderPath + fileName;
+            //var folderPath = Assembly.GetExecutingAssembly().Location;
+            //// folderPath = folderPath.Remove(folderPath.Length - 4, 4);
+            //var fileName = "TempTestText.txt";
+            //string dir = Path.GetDirectoryName(folderPath);
+            //// string root = Directory.GetCurrentDirectory();
+            //folderPath = dir + "\\";
+            //var fullFilePath = folderPath + fileName;
 
-            currentGuidText = tempSB.ToString();
+            //currentGuidText = tempSB.ToString();
 
-            File.WriteAllText(fullFilePath, currentGuidText);
+            //File.WriteAllText(fullFilePath, currentGuidText);
 
-            // 		folderPath	"D:\\Lab\\Repo\\LabSamples\\LabForPractice\\bin\\Debug\\LabForPractice"	string
+            //// 		folderPath	"D:\\Lab\\Repo\\LabSamples\\LabForPractice\\bin\\Debug\\LabForPractice"	string
 
-            var tempReadText = File.ReadAllText(fullFilePath);
-            var splitTexts = CSVReader.SplitStringWithSeparator(tempReadText, "\n");
+            //var tempReadText = File.ReadAllText(fullFilePath);
+            //var splitTexts = CSVReader.SplitStringWithSeparator(tempReadText, "\n");
 
-            var splitTextList = splitTexts.ToList();
+            //var splitTextList = splitTexts.ToList();
 
-            bool bCheckGUIDList = splitTextList.Contains(guidString);
+            //bool bCheckGUIDList = splitTextList.Contains(guidString);
 
-            bool bCheckGuid = false;
-            foreach (var item in splitTexts)
+            //bool bCheckGuid = false;
+            //foreach (var item in splitTexts)
+            //{
+            //    if(guidString.Equals(item))
+            //    {
+            //        Console.WriteLine("same guid in file");
+            //    }
+            //}
+            #endregion
+
+            #region iterate with tables
+
+            Dictionary<int, int> iteratorDic = new Dictionary<int, int>
             {
-                if(guidString.Equals(item))
+                { 1,500},
+                { 15,1500},
+                { 25,2500},
+            };
+            
+            SortedList<int,int> iteratorSL = new SortedList<int, int>
+            {
+                { 1,500},
+                { 15,1500},
+                { 25,2500},
+            };
+
+            int standardIterateValue = 40000;
+
+            var tempValue = Lerp(iteratorDic[1], iteratorDic[15], 0.5f);
+            var tempValue_2 = Lerp(iteratorDic[1], iteratorDic[15], 0f);
+            var tempValue_3 = Lerp(iteratorDic[1], iteratorDic[15], 1f);
+
+            int exp = 0;
+            int level = 1;
+
+            int currentAssertion = 0;
+            const int MAX_ASSERTION_COUNT = 150;
+
+            while (standardIterateValue > 0)
+            {
+                var currentComparer = iteratorSL.SkipWhile(x => x.Key < level).FirstOrDefault();
+                var currentValueComparers = GetKeyValueRange(level, iteratorSL,false);
+
+                // var currentKeyComparers = GetKeyValueRange(level, iteratorSL, true);
+                // var lerpedValue = currentComparers.Item1 / (float)currentComparers.Item2;
+                var lerpedValue = level / (float)currentComparer.Key;
+                if (currentValueComparers.Item2 == -1)
                 {
-                    Console.WriteLine("same guid in file");
+                    Console.WriteLine("next item is NOT exist!");
                 }
+
+                var currentCompareValue = Lerp(currentValueComparers.Item1, currentValueComparers.Item2, lerpedValue);
+
+                // if ((currentComparer.Value - standardIterateValue) <= 0)
+                if ((currentCompareValue - standardIterateValue) <= 0)
+                {
+                    standardIterateValue -= currentCompareValue;
+                    level++;
+
+                }
+                else
+                {
+                    exp = standardIterateValue;
+                    standardIterateValue = 0;
+                    break;
+                }
+
+                if (MAX_ASSERTION_COUNT <= currentAssertion)
+                {
+                    Console.WriteLine("break from assertion failed");
+                    break;
+                }
+                currentAssertion++;
             }
+            // 23, 1000
+            // 
+            var findKey = iteratorDic.SkipWhile(x => x.Key < level).FirstOrDefault();
+            var findKey_2 = iteratorDic.SkipWhile(x => x.Key < 16).FirstOrDefault();
+            var findKey_3 = iteratorDic.SkipWhile(x => x.Key < 14).FirstOrDefault();
+            var findKey_4 = iteratorDic.SkipWhile(x => x.Key < 15).FirstOrDefault();
+
+            var items = GetKeyValueRange(16, iteratorSL, false);
+            // var currentComparer = iteratorSL.SkipWhile(x => x.Key < level);
+            // var currentIndex = iteratorSL.IndexOfKey(currentComparer.Key);
+            // var nextComparer = iteratorSL. [currentIndex + 1];
+            
+
+            //foreach (var item in findKey)
+            //{
+            //    var currentItemValue = item.Key;
+            //}
+
             #endregion
 
 
         } // bracket of main
+
+        private static (int,int) GetKeyValueRange(int paramLevel, SortedList<int, int> paramList, bool bReturnTypeKey = true)
+        {
+            (int, int) result = (-1, -1);
+            int firstFind = -1;
+            int firstFindKey = -1;
+            foreach (var item in paramList)
+            {
+                if (item.Key >= paramLevel)
+                {
+                    
+                    firstFind = bReturnTypeKey ? item.Key : item.Value;
+                    firstFindKey = item.Key;
+                    break;
+                }
+            }
+            int secondFind = -1;
+            foreach (var item in paramList)
+            {
+                if (item.Key >= (firstFindKey + 1))
+                {
+                    secondFind = bReturnTypeKey ? item.Key : item.Value;
+                    break;
+                }
+            }
+            result.Item1 = firstFind;
+            result.Item2 = secondFind;
+            return result;
+        }
+
+        private static float Lerp(float firstFloat, float secondFloat, float by)
+        {
+            return firstFloat * (1 - by) + secondFloat * by;
+        }
+        private static int Lerp(int firstInt, int secondInt, float by)
+        {
+            return (int)(firstInt * (1 - by) + secondInt * by);
+        }
 
         public static void GetPerpendicularLine(Vector2 lineStartPoint, Vector2 lineEndPoint)
         {

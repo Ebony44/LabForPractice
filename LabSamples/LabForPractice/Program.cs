@@ -726,86 +726,87 @@ namespace RegularExpression1
 
             #region iterate with tables
 
-            Dictionary<int, int> iteratorDic = new Dictionary<int, int>
-            {
-                { 1,500},
-                { 15,1500},
-                { 25,2500},
-            };
-            
-            SortedList<int,int> iteratorSL = new SortedList<int, int>
-            {
-                { 1,500},
-                { 15,1500},
-                { 25,2500},
-            };
-
-            int standardIterateValue = 40000;
-
-            var tempValue = Lerp(iteratorDic[1], iteratorDic[15], 0.5f);
-            var tempValue_2 = Lerp(iteratorDic[1], iteratorDic[15], 0f);
-            var tempValue_3 = Lerp(iteratorDic[1], iteratorDic[15], 1f);
-
-            int exp = 0;
-            int level = 1;
-
-            int currentAssertion = 0;
-            const int MAX_ASSERTION_COUNT = 150;
-
-            while (standardIterateValue > 0)
-            {
-                var currentComparer = iteratorSL.SkipWhile(x => x.Key < level).FirstOrDefault();
-                var currentValueComparers = GetKeyValueRange(level, iteratorSL,false);
-
-                // var currentKeyComparers = GetKeyValueRange(level, iteratorSL, true);
-                // var lerpedValue = currentComparers.Item1 / (float)currentComparers.Item2;
-                var lerpedValue = level / (float)currentComparer.Key;
-                if (currentValueComparers.Item2 == -1)
-                {
-                    Console.WriteLine("next item is NOT exist!");
-                }
-
-                var currentCompareValue = Lerp(currentValueComparers.Item1, currentValueComparers.Item2, lerpedValue);
-
-                // if ((currentComparer.Value - standardIterateValue) <= 0)
-                if ((currentCompareValue - standardIterateValue) <= 0)
-                {
-                    standardIterateValue -= currentCompareValue;
-                    level++;
-
-                }
-                else
-                {
-                    exp = standardIterateValue;
-                    standardIterateValue = 0;
-                    break;
-                }
-
-                if (MAX_ASSERTION_COUNT <= currentAssertion)
-                {
-                    Console.WriteLine("break from assertion failed");
-                    break;
-                }
-                currentAssertion++;
-            }
-            // 23, 1000
-            // 
-            var findKey = iteratorDic.SkipWhile(x => x.Key < level).FirstOrDefault();
-            var findKey_2 = iteratorDic.SkipWhile(x => x.Key < 16).FirstOrDefault();
-            var findKey_3 = iteratorDic.SkipWhile(x => x.Key < 14).FirstOrDefault();
-            var findKey_4 = iteratorDic.SkipWhile(x => x.Key < 15).FirstOrDefault();
-
-            var items = GetKeyValueRange(16, iteratorSL, false);
-            // var currentComparer = iteratorSL.SkipWhile(x => x.Key < level);
-            // var currentIndex = iteratorSL.IndexOfKey(currentComparer.Key);
-            // var nextComparer = iteratorSL. [currentIndex + 1];
-            
-
-            //foreach (var item in findKey)
+            //Dictionary<int, int> iteratorDic = new Dictionary<int, int>
             //{
-            //    var currentItemValue = item.Key;
-            //}
+            //    { 1,500},
+            //    { 15,1500},
+            //    { 25,2500},
+            //};
+            //SortedList<int,int> iteratorSL = new SortedList<int, int>
+            //{
+            //    { 1,500},
+            //    { 15,1500},
+            //    { 25,2500},
+            //};
+            //int standardIterateValue = 40000;
 
+            //var tempValue = Lerp(iteratorDic[1], iteratorDic[15], 0.5f);
+            //var tempValue_2 = Lerp(iteratorDic[1], iteratorDic[15], 0f);
+            //var tempValue_3 = Lerp(iteratorDic[1], iteratorDic[15], 1f);
+
+            //int exp = 0;
+            //int level = 1;
+
+            //int currentAssertion = 0;
+            //const int MAX_ASSERTION_COUNT = 150;
+
+            //while (standardIterateValue > 0)
+            //{
+            //    var currentComparer = iteratorSL.SkipWhile(x => x.Key < level).FirstOrDefault();
+            //    var currentValueComparers = GetKeyValueRange(level, iteratorSL,false);
+
+            //    // var currentKeyComparers = GetKeyValueRange(level, iteratorSL, true);
+            //    // var lerpedValue = currentComparers.Item1 / (float)currentComparers.Item2;
+            //    var lerpedValue = level / (float)currentComparer.Key;
+            //    if (currentValueComparers.Item2 == -1)
+            //    {
+            //        Console.WriteLine("next item is NOT exist!");
+            //    }
+
+            //    var currentCompareValue = Lerp(currentValueComparers.Item1, currentValueComparers.Item2, lerpedValue);
+
+            //    // if ((currentComparer.Value - standardIterateValue) <= 0)
+            //    if ((currentCompareValue - standardIterateValue) <= 0)
+            //    {
+            //        standardIterateValue -= currentCompareValue;
+            //        level++;
+
+            //    }
+            //    else
+            //    {
+            //        exp = standardIterateValue;
+            //        standardIterateValue = 0;
+            //        break;
+            //    }
+
+            //    if (MAX_ASSERTION_COUNT <= currentAssertion)
+            //    {
+            //        Console.WriteLine("break from assertion failed");
+            //        break;
+            //    }
+            //    currentAssertion++;
+            //}
+            //// 23, 1000
+            //// 
+            //var findKey = iteratorDic.SkipWhile(x => x.Key < level).FirstOrDefault();
+            //var findKey_2 = iteratorDic.SkipWhile(x => x.Key < 16).FirstOrDefault();
+            //var findKey_3 = iteratorDic.SkipWhile(x => x.Key < 14).FirstOrDefault();
+            //var findKey_4 = iteratorDic.SkipWhile(x => x.Key < 15).FirstOrDefault();
+
+            //var items = GetKeyValueRange(16, iteratorSL, false);
+            #endregion
+
+            #region random from given list
+            int iterationCount = 15;
+            List<int> givenList = new List<int> { 4, 7, 12 };
+            
+            for (int i = 0; i < iterationCount; i++)
+            {
+                int result = 0;
+                System.Random r = new System.Random();
+                result = givenList[r.Next(givenList.Count)];
+            }
+            
             #endregion
 
 

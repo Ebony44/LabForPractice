@@ -797,16 +797,61 @@ namespace RegularExpression1
             #endregion
 
             #region random from given list
-            int iterationCount = 15;
-            List<int> givenList = new List<int> { 4, 7, 12 };
-            
-            for (int i = 0; i < iterationCount; i++)
+            //int iterationCount = 15;
+            //List<int> givenList = new List<int> { 4, 7, 12 };
+
+            //for (int i = 0; i < iterationCount; i++)
+            //{
+            //    int result = 0;
+            //    System.Random r = new System.Random();
+            //    result = givenList[r.Next(givenList.Count)];
+            //}
+
+            #endregion
+
+            #region get ascii code from char or string
+            //// string value = "Kết nối lại";
+            //string value = "ế ố ạ";
+
+
+            //string value2 = "eoa";
+            //// string value3 = "Xác nhận";
+            //string value3 = "á ậ";
+
+            //// Convert the string into a byte[].
+            //byte[] asciiBytes = Encoding.UTF8.GetBytes(value);
+            //byte[] asciiBytes2 = Encoding.Unicode.GetBytes(value2);
+            //byte[] asciiBytes3 = Encoding.Unicode.GetBytes(value3);
+
+            //char value4 = 'ế';
+            //var tempUnicode4 = CharToUnicodeFormat(value4);
+
+
+            #endregion
+
+            #region string reversing with O(n)
+
+            var tempString = "asdf";
+            var lastIndex = tempString.Length - 1;
+            StringBuilder tempSB = new StringBuilder(tempString);
+            for (int i = 0; i < tempString.Length / 2; i++)
             {
-                int result = 0;
-                System.Random r = new System.Random();
-                result = givenList[r.Next(givenList.Count)];
+                var firstChar = tempString[i];
+                var lastChar = tempString[lastIndex];
+                var tempBuffer = ' ';
+                
+                tempBuffer = firstChar;
+                //firstChar = lastChar;
+                //lastChar = tempBuffer;
+
+                tempSB[i] = lastChar;
+                tempSB[lastIndex] = tempBuffer;
+
+                lastIndex -= 1;
+                // if(lastIndex == )
             }
-            
+
+
             #endregion
 
 
@@ -840,6 +885,19 @@ namespace RegularExpression1
             result.Item2 = secondFind;
             return result;
         }
+
+
+
+        private static string CharToUnicodeFormat(char c)
+        {
+            return string.Format(@"U+{0:x4}", (int)c);
+        }
+
+        private static char UnicodeFormatToChar(string ucf)
+        {
+            return Convert.ToChar(Convert.ToInt32(ucf.Substring(2), 16));
+        }
+
 
         private static float Lerp(float firstFloat, float secondFloat, float by)
         {

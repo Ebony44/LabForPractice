@@ -831,27 +831,40 @@ namespace RegularExpression1
 
             #region string reversing with O(n)
 
-            var tempString = "asdf";
-            var lastIndex = tempString.Length - 1;
-            StringBuilder tempSB = new StringBuilder(tempString);
-            for (int i = 0; i < tempString.Length / 2; i++)
-            {
-                var firstChar = tempString[i];
-                var lastChar = tempString[lastIndex];
-                var tempBuffer = ' ';
-                
-                tempBuffer = firstChar;
-                //firstChar = lastChar;
-                //lastChar = tempBuffer;
+            //var tempString = "asdf";
+            //var lastIndex = tempString.Length - 1;
+            //StringBuilder tempSB = new StringBuilder(tempString);
+            //for (int i = 0; i < tempString.Length / 2; i++)
+            //{
+            //    var firstChar = tempString[i];
+            //    var lastChar = tempString[lastIndex];
+            //    var tempBuffer = ' ';
 
-                tempSB[i] = lastChar;
-                tempSB[lastIndex] = tempBuffer;
+            //    tempBuffer = firstChar;
+            //    //firstChar = lastChar;
+            //    //lastChar = tempBuffer;
 
-                lastIndex -= 1;
-                // if(lastIndex == )
-            }
+            //    tempSB[i] = lastChar;
+            //    tempSB[lastIndex] = tempBuffer;
 
+            //    lastIndex -= 1;
+            //    // if(lastIndex == )
+            //}
+            #endregion
 
+            #region regex from workspace
+            char[] charsToTrim = { '\\', '"', ':', ',', '{', '}' };
+            string packageNamePattern = "packageName(.*?),";
+            var currentReceipt = string.Empty;
+            // currentReceipt = "orderId\\\":\\\"GPA.3390-8632-9749-50010\\\"\"packageName\\\":\\\"com.MangoSoft.Susun\\\",";
+            currentReceipt = "orderId\\\":\\\"GPA.3390-8632-9749-50010\\\",\\\"packageName\\\":\\\"com.MangoSoft.Susun\\\",";
+            string productIdPattern = "productId(.*?),";
+            var tempProductID = Regex.Match(currentReceipt, productIdPattern).Value.Replace("productId", "").Trim(charsToTrim);
+            var tempPackageName = Regex.Match(currentReceipt, packageNamePattern).Value.Replace("packageName", "").Trim(charsToTrim);
+            string orderPattern = @"GPA\.[^,]+";
+            var tempOrderID = Regex.Match(currentReceipt, orderPattern).Value.Trim(charsToTrim);
+
+            Console.WriteLine("asdf");
             #endregion
 
 
